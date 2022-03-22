@@ -10,16 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.APi">
         <activity
-            android:name=".Tool_correspondent"
+            android:name=".Admin"
             android:exported="false" />
         <activity
-            android:name=".Administrator"
+            android:name=".ToolCorrespondent"
+            android:exported="false" />
+        <activity
+            android:name=".Repairer"
             android:exported="false" />
         <activity
             android:name=".Operator"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "974105458555",
+    "firebase_url": "https://rendszerfejlesztes-3b7df-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "rendszerfejlesztes-3b7df",
+    "storage_bucket": "rendszerfejlesztes-3b7df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:974105458555:android:f1e149a130b5dc0632efde",
+        "android_client_info": {
+          "package_name": "com.example.api"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "974105458555-ecohob4a91u5l74q6kbtin3qkdntejjj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKnZGGeK_TJKMq1JlY2vMKhWBIwaKnu9s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "974105458555-ecohob4a91u5l74q6kbtin3qkdntejjj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
