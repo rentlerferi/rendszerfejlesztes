@@ -5,17 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Tool_correspondent">
+    tools:context=".ToolCorrespondent">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="To Do" />
-
-    <ListView
-        android:layout_width="409dp"
-        android:layout_height="314dp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -24,74 +20,47 @@
         android:text="New tool to maintain" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/toolName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:hint="Tool name"
+        android:inputType="textPersonName"
+        android:minHeight="48dp" />
 
-    <TextView
-        android:id="@+id/textView3"
+    <EditText
+        android:id="@+id/toolID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="When to maintain" />
+        android:ems="10"
+        android:hint="ID"
+        android:inputType="textPersonName" />
 
-    <RadioGroup
+    <EditText
+        android:id="@+id/toolLocation"
         android:layout_width="match_parent"
-        android:layout_height="231dp">
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Location"
+        android:inputType="textPersonName" />
 
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Weekly" />
-
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Monhtly" />
-
-        <RadioButton
-            android:id="@+id/radioButton3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Every 3 monts" />
-
-        <RadioButton
-            android:id="@+id/radioButton4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Half a year" />
-
-        <RadioButton
-            android:id="@+id/radioButton5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Once a year" />
-    </RadioGroup>
+    <Spinner
+        android:id="@+id/category"
+        android:spinnerMode="dropdown"
+        android:background="@android:drawable/btn_dropdown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="55dp">
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/addTool"
             android:layout_width="135dp"
             android:layout_height="wrap_content"
             android:text="Add" />
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="141dp"
-            android:layout_height="wrap_content"
-            android:text="Delete" />
-
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="135dp"
-            android:layout_height="wrap_content"
-            android:text="Modify" />
     </LinearLayout>
 
 </LinearLayout>
