@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">APi</string>
+    <string-array name="roles">
+        <item>Admin</item>
+        <item>Operator</item>
+        <item>Repairer</item>
+        <item>ToolCorrespondent</item>
+    </string-array>
 </resources>
