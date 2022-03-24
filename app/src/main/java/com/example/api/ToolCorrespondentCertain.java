@@ -23,26 +23,25 @@ import java.util.ArrayList;
 public class ToolCorrespondentCertain extends AppCompatActivity {
 
     Button addTool;
-    EditText name, ID, location, description;
+    EditText name, ID, location, toolDescription;
     Spinner category;
     ArrayList<String> categoryItems;
 
-    String toolName, toolLocation, toolCategory, toolDescription;
+    String toolName, toolLocation, toolCategory, description;
     int toolID;
 
     DatabaseReference ref;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tool_correspondent);
 
-        description = findViewById(R.id.description);
         category = findViewById(R.id.category);
         addTool = findViewById(R.id.addTool);
         name = findViewById(R.id.toolName);
         ID = findViewById(R.id.toolID);
         location = findViewById(R.id.toolLocation);
+        toolDescription = findViewById(R.id.description);
         ref = FirebaseDatabase.getInstance("https://rendszerfejlesztes-3b7df-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Tool Categories");
         //DatabaseReference categoryRef = ref.child(1);
 
@@ -78,9 +77,9 @@ public class ToolCorrespondentCertain extends AppCompatActivity {
                     toolID = Integer.parseInt(ID.getText().toString());
                     toolLocation = location.getText().toString();
                     toolCategory = category.getSelectedItem().toString();
-                    toolDescription = description.getText().toString();
+                    description = toolDescription.getText().toString();
 
-                    Tool tool = new Tool(toolName, toolID, toolLocation, toolDescription);
+                    Tool tool = new Tool(toolName, toolID, toolLocation, description);
 
                     DatabaseReference toolRef = FirebaseDatabase.getInstance("https://rendszerfejlesztes-3b7df-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Tool Categories").child(toolCategory);
 

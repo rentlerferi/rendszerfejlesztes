@@ -7,16 +7,8 @@ public class Tool{
     private String location;
     private int repair_period;
     private int repair_time;
-    //private String category;
+    private String category;
     private String description;
-
-    /*public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }*/
 
     public String getDescription() {
         return description;
@@ -24,6 +16,14 @@ public class Tool{
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getName() {
@@ -71,6 +71,7 @@ public class Tool{
         this.id = id;
         this.location = location;
         this.description = description;
+        //this.category = category;
         //this.repair_period = repare_period;
         //this.repair_time = repare_time;
     }

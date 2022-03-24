@@ -2630,7 +2630,6 @@ int id action_text 0x7f09004c
 int id actions 0x7f09004d
 int id activity_chooser_view_content 0x7f09004e
 int id add 0x7f09004f
-int id addCategory 0x7f09020c
 int id addTool 0x7f09020b
 int id adjust_height 0x7f090050
 int id adjust_width 0x7f090051
@@ -2667,6 +2666,8 @@ int id browser_actions_menu_item_text 0x7f09006f
 int id browser_actions_menu_items 0x7f090070
 int id browser_actions_menu_view 0x7f090071
 int id button 0x7f090072
+int id button3 0x7f090074
+int id button4 0x7f090075
 int id button5 0x7f090076
 int id button6 0x7f090077
 int id button7 0x7f090078
@@ -2678,11 +2679,9 @@ int id callMeasure 0x7f09007d
 int id cancel_button 0x7f09007e
 int id carryVelocity 0x7f09007f
 int id category 0x7f090207
-int id categoryName 0x7f09020d
 int id center 0x7f090080
 int id center_horizontal 0x7f090081
 int id center_vertical 0x7f090082
-int id certainTool 0x7f09020e
 int id chain 0x7f090083
 int id chain2 0x7f090084
 int id chains 0x7f090085
@@ -2724,7 +2723,6 @@ int id decor_content_parent 0x7f0900a8
 int id default_activity_button 0x7f0900a9
 int id deltaRelative 0x7f0900aa
 int id dependency_ordering 0x7f0900ab
-int id description 0x7f09020f
 int id design_bottom_sheet 0x7f0900ac
 int id design_menu_item_action_area 0x7f0900ad
 int id design_menu_item_action_area_stub 0x7f0900ae
@@ -2797,8 +2795,6 @@ int id image 0x7f0900f1
 int id immediateStop 0x7f0900f2
 int id included 0x7f0900f3
 int id info 0x7f0900f4
-int id instructions 0x7f090210
-int id intervalDropdown 0x7f090211
 int id invisible 0x7f0900f5
 int id inward 0x7f0900f6
 int id italic 0x7f0900f7
@@ -2889,7 +2885,6 @@ int id neverCompleteToStart 0x7f09014b
 int id noScroll 0x7f09014c
 int id noState 0x7f09014d
 int id none 0x7f09014e
-int id norma 0x7f090212
 int id normal 0x7f09014f
 int id north 0x7f090150
 int id notification_background 0x7f090151
@@ -3034,7 +3029,6 @@ int id title 0x7f0901e1
 int id titleDividerNoCustom 0x7f0901e2
 int id title_template 0x7f0901e3
 int id toggle 0x7f0901e4
-int id toolGroup 0x7f090213
 int id toolID 0x7f090208
 int id toolLocation 0x7f090209
 int id toolName 0x7f09020a
@@ -3163,8 +3157,6 @@ int layout activity_main 0x7f0c001d
 int layout activity_operator 0x7f0c001e
 int layout activity_repairer 0x7f0c001f
 int layout activity_tool_correspondent 0x7f0c0020
-int layout activity_tool_correspondent_category 0x7f0c007a
-int layout activity_tool_correspondent_menu 0x7f0c007b
 int layout browser_actions_context_menu_page 0x7f0c0021
 int layout browser_actions_context_menu_row 0x7f0c0022
 int layout custom_dialog 0x7f0c0023

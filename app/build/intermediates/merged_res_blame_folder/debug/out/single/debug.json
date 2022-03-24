@@ -40,16 +40,8 @@
         "source": "D:\\Users\\Martin\\Documents\\GitHub\\rendszerfejlesztes\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "D:\\Users\\Martin\\Documents\\GitHub\\rendszerfejlesztes\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_tool_correspondent_menu.xml.flat",
-        "source": "D:\\Users\\Martin\\Documents\\GitHub\\rendszerfejlesztes\\app\\src\\main\\res\\layout\\activity_tool_correspondent_menu.xml"
-    },
-    {
         "merged": "D:\\Users\\Martin\\Documents\\GitHub\\rendszerfejlesztes\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_main.xml.flat",
         "source": "D:\\Users\\Martin\\Documents\\GitHub\\rendszerfejlesztes\\app\\src\\main\\res\\layout\\activity_main.xml"
-    },
-    {
-        "merged": "D:\\Users\\Martin\\Documents\\GitHub\\rendszerfejlesztes\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_tool_correspondent_category.xml.flat",
-        "source": "D:\\Users\\Martin\\Documents\\GitHub\\rendszerfejlesztes\\app\\src\\main\\res\\layout\\activity_tool_correspondent_category.xml"
     },
     {
         "merged": "D:\\Users\\Martin\\Documents\\GitHub\\rendszerfejlesztes\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_round.webp.flat",

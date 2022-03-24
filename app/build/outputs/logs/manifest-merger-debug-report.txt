@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-41:12
-INJECTED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-41:12
-INJECTED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-41:12
-INJECTED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-41:12
+ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-35:12
 MERGED from [com.google.android.material:material:1.5.0] C:\Users\Martin\.gradle\caches\transforms-3\6a5e2ee75c5d8c672e91214ceeeacbe3\transformed\material-1.5.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] C:\Users\Martin\.gradle\caches\transforms-3\7c84409cb1268a388708784b8ebcda8c\transformed\constraintlayout-2.1.3\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.4.1] C:\Users\Martin\.gradle\caches\transforms-3\720c25cf7c7463d63604b0793e90243e\transformed\appcompat-1.4.1\AndroidManifest.xml:17:1-24:12
@@ -60,25 +60,25 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Martin\.gradle\c
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Martin\.gradle\caches\transforms-3\7a33a129588321a0b0975218048bb4da\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\Martin\.gradle\caches\transforms-3\7d4ad5b9f23057939c66cb4dafe7860f\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\Martin\.gradle\caches\transforms-3\1f330d098576dcf6df74e63f82b13f14\transformed\annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
-INJECTED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-41:12
-INJECTED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-41:12
-INJECTED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-35:12
 	package
 		ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:3:5-30
 		INJECTED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml
 		INJECTED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml
-		ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-41:12
+		ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-35:12
 		INJECTED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml
-		ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-41:12
+		ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-35:12
 		INJECTED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:5:5-39:19
+ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:5:5-33:19
 MERGED from [com.google.android.material:material:1.5.0] C:\Users\Martin\.gradle\caches\transforms-3\6a5e2ee75c5d8c672e91214ceeeacbe3\transformed\material-1.5.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.5.0] C:\Users\Martin\.gradle\caches\transforms-3\6a5e2ee75c5d8c672e91214ceeeacbe3\transformed\material-1.5.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] C:\Users\Martin\.gradle\caches\transforms-3\7c84409cb1268a388708784b8ebcda8c\transformed\constraintlayout-2.1.3\AndroidManifest.xml:9:5-20
@@ -125,58 +125,46 @@ MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\Martin\.gradle\cac
 		ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:6:9-35
 	android:theme
 		ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:11:9-41
-activity#com.example.api.ToolCorrespondentCategory
+activity#com.example.api.Admin
 ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:12:9-14:40
 	android:exported
 		ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:14:13-37
 	android:name
-		ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:13:13-54
-activity#com.example.api.ToolCorresponentMenu
+		ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:13:13-34
+activity#com.example.api.ToolCorrespondent
 ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:15:9-17:40
 	android:exported
 		ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:17:13-37
 	android:name
-		ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:16:13-49
-activity#com.example.api.Admin
+		ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:16:13-46
+activity#com.example.api.Repairer
 ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:18:9-20:40
 	android:exported
 		ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:20:13-37
 	android:name
-		ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:19:13-34
-activity#com.example.api.ToolCorrespondentCertain
+		ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:19:13-37
+activity#com.example.api.Operator
 ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:21:9-23:40
 	android:exported
 		ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:23:13-37
 	android:name
-		ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:22:13-53
-activity#com.example.api.Repairer
-ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:24:9-26:40
-	android:exported
-		ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:26:13-37
-	android:name
-		ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:25:13-37
-activity#com.example.api.Operator
-ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:27:9-29:40
-	android:exported
-		ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:29:13-37
-	android:name
-		ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:28:13-37
+		ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:22:13-37
 activity#com.example.api.LoginActivity
-ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:30:9-38:20
+ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:24:9-32:20
 	android:exported
-		ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:32:13-36
+		ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:26:13-36
 	android:name
-		ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:31:13-42
+		ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:25:13-42
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:33:13-37:29
+ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:27:13-31:29
 action#android.intent.action.MAIN
-ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:34:17-69
+ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:28:17-69
 	android:name
-		ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:34:25-66
+		ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:28:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:36:17-77
+ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:30:17-77
 	android:name
-		ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:36:27-74
+		ADDED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:30:27-74
 uses-sdk
 INJECTED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\Users\Martin\Documents\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml

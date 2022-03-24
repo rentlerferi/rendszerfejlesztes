@@ -24,16 +24,10 @@
         android:testOnly="true"
         android:theme="@style/Theme.APi" >
         <activity
-            android:name="com.example.api.ToolCorrespondentCategory"
-            android:exported="false" />
-        <activity
-            android:name="com.example.api.ToolCorresponentMenu"
-            android:exported="false" />
-        <activity
             android:name="com.example.api.Admin"
             android:exported="false" />
         <activity
-            android:name="com.example.api.ToolCorrespondentCertain"
+            android:name="com.example.api.ToolCorrespondent"
             android:exported="false" />
         <activity
             android:name="com.example.api.Repairer"
