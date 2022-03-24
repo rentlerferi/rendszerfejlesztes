@@ -19,24 +19,25 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
-public class ToolCorrespondent extends AppCompatActivity {
+public class ToolCorrespondentCertain extends AppCompatActivity {
 
     Button addTool;
-    EditText name, ID, location;
+    EditText name, ID, location, description;
     Spinner category;
     ArrayList<String> categoryItems;
 
-    String toolName, toolLocation, toolCategory;
+    String toolName, toolLocation, toolCategory, toolDescription;
     int toolID;
 
     DatabaseReference ref;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tool_correspondent);
 
+        description = findViewById(R.id.description);
         category = findViewById(R.id.category);
         addTool = findViewById(R.id.addTool);
         name = findViewById(R.id.toolName);
@@ -77,14 +78,15 @@ public class ToolCorrespondent extends AppCompatActivity {
                     toolID = Integer.parseInt(ID.getText().toString());
                     toolLocation = location.getText().toString();
                     toolCategory = category.getSelectedItem().toString();
+                    toolDescription = description.getText().toString();
 
-                    Tool tool = new Tool(toolName, toolID, toolLocation, toolCategory);
+                    Tool tool = new Tool(toolName, toolID, toolLocation, toolDescription);
 
                     DatabaseReference toolRef = FirebaseDatabase.getInstance("https://rendszerfejlesztes-3b7df-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Tool Categories").child(toolCategory);
 
                     toolRef.child(toolName).setValue(tool);
                 } else {
-                    Toast.makeText(ToolCorrespondent.this, "Fill all the required fields!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ToolCorrespondentCertain.this, "Fill all the required fields!", Toast.LENGTH_SHORT).show();
                 }
 
             }

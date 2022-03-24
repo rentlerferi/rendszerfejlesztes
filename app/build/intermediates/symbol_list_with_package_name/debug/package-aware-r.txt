@@ -2631,6 +2631,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id addCategory
 id addTool
 id adjust_height
 id adjust_width
@@ -2667,8 +2668,6 @@ id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
 id button
-id button3
-id button4
 id button5
 id button6
 id button7
@@ -2680,9 +2679,11 @@ id callMeasure
 id cancel_button
 id carryVelocity
 id category
+id categoryName
 id center
 id center_horizontal
 id center_vertical
+id certainTool
 id chain
 id chain2
 id chains
@@ -2724,6 +2725,7 @@ id decor_content_parent
 id default_activity_button
 id deltaRelative
 id dependency_ordering
+id description
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -2796,6 +2798,8 @@ id image
 id immediateStop
 id included
 id info
+id instructions
+id intervalDropdown
 id invisible
 id inward
 id italic
@@ -2886,6 +2890,7 @@ id neverCompleteToStart
 id noScroll
 id noState
 id none
+id norma
 id normal
 id north
 id notification_background
@@ -3030,6 +3035,7 @@ id title
 id titleDividerNoCustom
 id title_template
 id toggle
+id toolGroup
 id toolID
 id toolLocation
 id toolName
@@ -3158,6 +3164,8 @@ layout activity_main
 layout activity_operator
 layout activity_repairer
 layout activity_tool_correspondent
+layout activity_tool_correspondent_category
+layout activity_tool_correspondent_menu
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
 layout custom_dialog

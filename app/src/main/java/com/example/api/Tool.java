@@ -7,14 +7,23 @@ public class Tool{
     private String location;
     private int repair_period;
     private int repair_time;
-    private String category;
+    //private String category;
+    private String description;
 
-    public String getCategory() {
+    /*public String getCategory() {
         return category;
     }
 
     public void setCategory(String category) {
         this.category = category;
+    }*/
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getName() {
@@ -57,11 +66,11 @@ public class Tool{
         this.repair_time = repare_time;
     }
 
-    public Tool(String name, int id, String location, String category){
+    public Tool(String name, int id, String location, String description){
         this.name = name;
         this.id = id;
         this.location = location;
-        this.category = category;
+        this.description = description;
         //this.repair_period = repare_period;
         //this.repair_time = repare_time;
     }
