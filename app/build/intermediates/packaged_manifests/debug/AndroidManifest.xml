@@ -27,13 +27,19 @@
             android:name="com.example.api.Admin"
             android:exported="false" />
         <activity
-            android:name="com.example.api.ToolCorrespondent"
+            android:name="com.example.api.ToolCorrespondentCertain"
             android:exported="false" />
         <activity
             android:name="com.example.api.Repairer"
             android:exported="false" />
         <activity
             android:name="com.example.api.Operator"
+            android:exported="false" />
+        <activity
+            android:name="com.example.api.ToolCorresponentMenu"
+            android:exported="false" />
+        <activity
+            android:name="com.example.api.ToolCorrespondentCategory"
             android:exported="false" />
         <activity
             android:name="com.example.api.LoginActivity"

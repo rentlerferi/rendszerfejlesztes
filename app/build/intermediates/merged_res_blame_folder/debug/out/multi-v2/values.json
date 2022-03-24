@@ -338,10 +338,10 @@
                     "from": {
                         "startLines": "2,1",
                         "startColumns": "4,4",
-                        "startOffsets": "59,17",
+                        "startOffsets": "57,16",
                         "endLines": "7,1",
                         "endColumns": "19,40",
-                        "endOffsets": "237,53"
+                        "endOffsets": "230,52"
                     },
                     "to": {
                         "startLines": "2,1614",

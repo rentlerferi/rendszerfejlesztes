@@ -105,7 +105,7 @@ public class LoginActivity extends AppCompatActivity {
                             finish();
                             break;
                         case "ToolCorrespondent":
-                            Intent d = new Intent(LoginActivity.this, ToolCorrespondentCertain.class);
+                            Intent d = new Intent(LoginActivity.this, ToolCorresponentMenu.class);
                             startActivity(d);
                             finish();
                             break;

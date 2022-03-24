@@ -5,13 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ToolCorrespondent">
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="To Do" />
+    tools:context=".ToolCorrespondentCertain">
 
     <TextView
         android:id="@+id/textView2"
@@ -44,6 +38,14 @@
         android:hint="Location"
         android:inputType="textPersonName" />
 
+    <EditText
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Description"
+        android:inputType="textPersonName" />
+
     <Spinner
         android:id="@+id/category"
         android:spinnerMode="dropdown"
@@ -61,17 +63,6 @@
             android:layout_height="wrap_content"
             android:text="Add" />
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="141dp"
-            android:layout_height="wrap_content"
-            android:text="Delete" />
-
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="135dp"
-            android:layout_height="wrap_content"
-            android:text="Modify" />
     </LinearLayout>
 
 </LinearLayout>
