@@ -5,8 +5,6 @@ public class Tool{
     private String name;
     private int id;
     private String location;
-    private int repair_period;
-    private int repair_time;
     private String category;
     private String description;
 
@@ -50,30 +48,11 @@ public class Tool{
         this.location = location;
     }
 
-    public int getRepare_period() {
-        return repair_period;
-    }
-
-    public void setRepare_period(int repare_period) {
-        this.repair_period = repare_period;
-    }
-
-    public int getRepare_time() {
-        return repair_time;
-    }
-
-    public void setRepare_time(int repare_time) {
-        this.repair_time = repare_time;
-    }
-
     public Tool(String name, int id, String location, String description){
         this.name = name;
         this.id = id;
         this.location = location;
         this.description = description;
-        //this.category = category;
-        //this.repair_period = repare_period;
-        //this.repair_time = repare_time;
     }
 
 }
