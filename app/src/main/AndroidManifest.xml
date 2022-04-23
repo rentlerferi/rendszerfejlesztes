@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.APi">
         <activity
+            android:name=".AdminMenu"
+            android:exported="false" />
+        <activity
+            android:name=".AddProfession"
+            android:exported="false" />
+        <activity
             android:name=".Admin"
             android:exported="false" />
         <activity

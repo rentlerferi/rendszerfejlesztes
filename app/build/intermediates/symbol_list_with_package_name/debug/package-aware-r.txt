@@ -2723,6 +2723,7 @@ id decelerate
 id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
+id deleteCategory
 id deltaRelative
 id dependency_ordering
 id description
@@ -3053,6 +3054,7 @@ id unchecked
 id uniform
 id unlabeled
 id up
+id updateCategory
 id useLogo
 id vertical_only
 id view_offset_helper

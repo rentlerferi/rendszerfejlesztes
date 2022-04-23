@@ -30,6 +30,7 @@ id button9
 id category
 id categoryName
 id certainTool
+id deleteCategory
 id description
 id instructions
 id intervalDropdown
@@ -44,6 +45,7 @@ id toolGroup
 id toolID
 id toolLocation
 id toolName
+id updateCategory
 layout activity_admin
 layout activity_main
 layout activity_operator

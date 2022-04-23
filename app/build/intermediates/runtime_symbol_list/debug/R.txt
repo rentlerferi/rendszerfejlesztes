@@ -2722,6 +2722,7 @@ int id decelerate 0x7f0900a8
 int id decelerateAndComplete 0x7f0900a9
 int id decor_content_parent 0x7f0900aa
 int id default_activity_button 0x7f0900ab
+int id deleteCategory 0x7f090209
 int id deltaRelative 0x7f0900ac
 int id dependency_ordering 0x7f0900ad
 int id description 0x7f0900ae
@@ -3052,6 +3053,7 @@ int id unchecked 0x7f0901f2
 int id uniform 0x7f0901f3
 int id unlabeled 0x7f0901f4
 int id up 0x7f0901f5
+int id updateCategory 0x7f09020a
 int id useLogo 0x7f0901f6
 int id vertical_only 0x7f0901f7
 int id view_offset_helper 0x7f0901f8

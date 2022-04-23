@@ -1,3 +1,4 @@
+com.example.api:id/updateCategory = 0x7f09020a
 com.example.api:layout/abc_action_menu_item_layout = 0x7f0c0002
 com.example.api:style/Widget.MaterialComponents.MaterialCalendar.Day = 0x7f1103b4
 com.example.api:attr/cardUseCompatPadding = 0x7f04008a
@@ -1869,6 +1870,7 @@ com.example.api:dimen/mtrl_navigation_item_horizontal_padding = 0x7f0701e5
 com.example.api:attr/fabAnimationMode = 0x7f040191
 com.example.api:dimen/mtrl_navigation_bar_item_default_margin = 0x7f0701e3
 com.example.api:string/m3_sys_motion_easing_decelerated = 0x7f10004b
+com.example.api:id/deleteCategory = 0x7f090209
 com.example.api:dimen/mtrl_navigation_bar_item_default_icon_size = 0x7f0701e2
 com.example.api:style/ThemeOverlay.Material3.Light = 0x7f110265
 com.example.api:dimen/mtrl_fab_translation_z_hovered_focused = 0x7f0701d6

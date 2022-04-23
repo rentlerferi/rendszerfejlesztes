@@ -90,7 +90,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     switch(user.getRole()){
                         case "Admin":
-                            Intent a = new Intent(LoginActivity.this, Admin.class);
+                            Intent a = new Intent(LoginActivity.this, AdminMenu.class);
                             startActivity(a);
                             finish();
                             break;
