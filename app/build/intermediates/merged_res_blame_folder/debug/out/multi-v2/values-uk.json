@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Users\\Martin\\Documents\\GitHub\\rendszerfejlesztes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uk\\values-uk.xml",
+            "outputFile": "C:\\Users\\kmarc\\OneDrive\\Dokumentumok\\GitHub\\rendszerfejlesztes\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uk\\values-uk.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Martin\\.gradle\\caches\\transforms-3\\78a92ca9aa29b0a3690a45476515522e\\transformed\\play-services-base-18.0.1\\res\\values-uk\\values.xml",
+                    "source": "C:\\Users\\kmarc\\.gradle\\caches\\transforms-3\\78a92ca9aa29b0a3690a45476515522e\\transformed\\play-services-base-18.0.1\\res\\values-uk\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Martin\\.gradle\\caches\\transforms-3\\6a5e2ee75c5d8c672e91214ceeeacbe3\\transformed\\material-1.5.0\\res\\values-uk\\values-uk.xml",
+                    "source": "C:\\Users\\kmarc\\.gradle\\caches\\transforms-3\\6a5e2ee75c5d8c672e91214ceeeacbe3\\transformed\\material-1.5.0\\res\\values-uk\\values-uk.xml",
                     "from": {
                         "startLines": "2,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -40,24 +40,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Martin\\.gradle\\caches\\transforms-3\\748f0407123e538096fa54d8d5e55d2c\\transformed\\play-services-basement-18.0.0\\res\\values-uk\\values.xml",
+                    "source": "C:\\Users\\kmarc\\.gradle\\caches\\transforms-3\\34c062dd3d889e3789f5dce7094c67a5\\transformed\\core-1.7.0\\res\\values-uk\\values-uk.xml",
                     "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "195",
-                        "endColumns": "141",
-                        "endOffsets": "336"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "47",
+                        "startLines": "108",
                         "startColumns": "4",
-                        "startOffsets": "4497",
-                        "endColumns": "145",
-                        "endOffsets": "4638"
+                        "startOffsets": "9734",
+                        "endColumns": "100",
+                        "endOffsets": "9830"
                     }
                 },
                 {
-                    "source": "C:\\Users\\Martin\\.gradle\\caches\\transforms-3\\720c25cf7c7463d63604b0793e90243e\\transformed\\appcompat-1.4.1\\res\\values-uk\\values-uk.xml",
+                    "source": "C:\\Users\\kmarc\\.gradle\\caches\\transforms-3\\720c25cf7c7463d63604b0793e90243e\\transformed\\appcompat-1.4.1\\res\\values-uk\\values-uk.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -74,20 +74,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Martin\\.gradle\\caches\\transforms-3\\34c062dd3d889e3789f5dce7094c67a5\\transformed\\core-1.7.0\\res\\values-uk\\values-uk.xml",
+                    "source": "C:\\Users\\kmarc\\.gradle\\caches\\transforms-3\\748f0407123e538096fa54d8d5e55d2c\\transformed\\play-services-basement-18.0.0\\res\\values-uk\\values.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "195",
+                        "endColumns": "141",
+                        "endOffsets": "336"
                     },
                     "to": {
-                        "startLines": "108",
+                        "startLines": "47",
                         "startColumns": "4",
-                        "startOffsets": "9734",
-                        "endColumns": "100",
-                        "endOffsets": "9830"
+                        "startOffsets": "4497",
+                        "endColumns": "145",
+                        "endOffsets": "4638"
                     }
                 }
             ]

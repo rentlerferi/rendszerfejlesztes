@@ -11,6 +11,7 @@ color white
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 id ID
+id ID2
 id Knw1
 id Knw2
 id Knw3
@@ -18,9 +19,12 @@ id Knw4
 id Login
 id Login_auth
 id Name
+id ProfessionBtn
 id Role
 id addCategory
+id addProfession
 id addTool
+id addUser
 id button
 id button5
 id button6
@@ -30,11 +34,15 @@ id button9
 id category
 id categoryName
 id certainTool
+id delProfession
 id deleteCategory
 id description
 id instructions
 id intervalDropdown
+id knw
 id norma
+id repairer_list
+id tasks_list
 id textView10
 id textView2
 id textView4
@@ -46,7 +54,9 @@ id toolID
 id toolLocation
 id toolName
 id updateCategory
+layout activity_add_profession
 layout activity_admin
+layout activity_admin_menu
 layout activity_main
 layout activity_operator
 layout activity_repairer
@@ -56,6 +66,7 @@ layout activity_tool_correspondent_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
+string database_url
 string default_web_client_id
 string firebase_database_url
 string gcm_defaultSenderId

@@ -24,6 +24,12 @@
         android:testOnly="true"
         android:theme="@style/Theme.APi" >
         <activity
+            android:name="com.example.api.AdminMenu"
+            android:exported="false" />
+        <activity
+            android:name="com.example.api.AddProfession"
+            android:exported="false" />
+        <activity
             android:name="com.example.api.Admin"
             android:exported="false" />
         <activity
