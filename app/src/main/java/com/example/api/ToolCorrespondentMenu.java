@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class ToolCorresponentMenu extends AppCompatActivity {
+public class ToolCorrespondentMenu extends AppCompatActivity {
 
     Button group, certain;
 
@@ -23,7 +23,7 @@ public class ToolCorresponentMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent();
-                i.setClass(ToolCorresponentMenu.this, ToolCorrespondentCertain.class);
+                i.setClass(ToolCorrespondentMenu.this, ToolCorrespondentCertain.class);
                 startActivity(i);
             }
         });
@@ -32,7 +32,7 @@ public class ToolCorresponentMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent();
-                i.setClass(ToolCorresponentMenu.this, ToolCorrespondentCategory.class);
+                i.setClass(ToolCorrespondentMenu.this, ToolCorrespondentCategory.class);
                 startActivity(i);
             }
         });

@@ -2557,6 +2557,7 @@ id BOTTOM_START
 id CTRL
 id FUNCTION
 id ID
+id ID2
 id Knw1
 id Knw2
 id Knw3
@@ -2575,6 +2576,12 @@ id SYM
 id TOP_END
 id TOP_START
 id accelerate
+id acceptTask
+id acceptedTaskDate
+id acceptedTaskInstruction
+id acceptedTaskLocation
+id acceptedTaskName
+id acceptedTasks
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
 id accessibility_custom_action_1
@@ -2632,7 +2639,9 @@ id actions
 id activity_chooser_view_content
 id add
 id addCategory
+id addProfession
 id addTool
+id addUser
 id adjust_height
 id adjust_width
 id alertTitle
@@ -2668,9 +2677,6 @@ id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
 id button
-id button5
-id button6
-id button7
 id button8
 id button9
 id buttonPanel
@@ -2723,8 +2729,10 @@ id decelerate
 id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
+id delProfession
 id deleteCategory
 id deltaRelative
+id denyTask
 id dependency_ordering
 id description
 id design_bottom_sheet
@@ -2798,6 +2806,7 @@ id ignoreRequest
 id image
 id immediateStop
 id included
+id incomingTasks
 id info
 id instructions
 id intervalDropdown
@@ -2811,6 +2820,7 @@ id item4
 id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
+id knw
 id labeled
 id layout
 id left
@@ -2847,6 +2857,7 @@ id material_value_index
 id message
 id middle
 id mini
+id modifyState
 id month_grid
 id month_navigation_bar
 id month_navigation_fragment_toggle
@@ -3004,6 +3015,10 @@ id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id tag_window_insets_animation_callback
+id taskDate
+id taskInstruction
+id taskLocation
+id taskName
 id test_checkbox_android_button_tint
 id test_checkbox_app_button_tint
 id test_radiobutton_android_button_tint
@@ -3015,12 +3030,11 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
-id textView10
 id textView2
 id textView4
-id textView5
 id textView7
 id textView8
+id textView9
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3160,7 +3174,9 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_add_profession
 layout activity_admin
+layout activity_admin_menu
 layout activity_main
 layout activity_operator
 layout activity_repairer

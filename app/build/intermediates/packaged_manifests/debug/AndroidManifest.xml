@@ -24,6 +24,12 @@
         android:testOnly="true"
         android:theme="@style/Theme.APi" >
         <activity
+            android:name="com.example.api.AdminMenu"
+            android:exported="false" />
+        <activity
+            android:name="com.example.api.AddProfession"
+            android:exported="false" />
+        <activity
             android:name="com.example.api.Admin"
             android:exported="false" />
         <activity
@@ -36,7 +42,7 @@
             android:name="com.example.api.Operator"
             android:exported="false" />
         <activity
-            android:name="com.example.api.ToolCorresponentMenu"
+            android:name="com.example.api.ToolCorrespondentMenu"
             android:exported="false" />
         <activity
             android:name="com.example.api.ToolCorrespondentCategory"
