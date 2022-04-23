@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 public class ToolCorrespondentMenu extends AppCompatActivity {
@@ -19,22 +18,16 @@ public class ToolCorrespondentMenu extends AppCompatActivity {
         group = findViewById(R.id.toolGroup);
         certain = findViewById(R.id.certainTool);
 
-        certain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent();
-                i.setClass(ToolCorrespondentMenu.this, ToolCorrespondentCertain.class);
-                startActivity(i);
-            }
+        certain.setOnClickListener(view -> {
+            Intent i = new Intent();
+            i.setClass(ToolCorrespondentMenu.this, ToolCorrespondentCertain.class);
+            startActivity(i);
         });
 
-        group.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent();
-                i.setClass(ToolCorrespondentMenu.this, ToolCorrespondentCategory.class);
-                startActivity(i);
-            }
+        group.setOnClickListener(view -> {
+            Intent i = new Intent();
+            i.setClass(ToolCorrespondentMenu.this, ToolCorrespondentCategory.class);
+            startActivity(i);
         });
     }
 }

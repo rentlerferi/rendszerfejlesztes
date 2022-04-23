@@ -2575,12 +2575,6 @@ int id SYM 0x7f090016
 int id TOP_END 0x7f090017
 int id TOP_START 0x7f090018
 int id accelerate 0x7f090019
-int id acceptTask 0x7f090211
-int id acceptedTaskDate 0x7f090212
-int id acceptedTaskInstruction 0x7f090213
-int id acceptedTaskLocation 0x7f090214
-int id acceptedTaskName 0x7f090215
-int id acceptedTasks 0x7f090216
 int id accessibility_action_clickable_span 0x7f09001a
 int id accessibility_custom_action_0 0x7f09001b
 int id accessibility_custom_action_1 0x7f09001c
@@ -2676,6 +2670,9 @@ int id browser_actions_menu_item_text 0x7f090075
 int id browser_actions_menu_items 0x7f090076
 int id browser_actions_menu_view 0x7f090077
 int id button 0x7f090078
+int id button5 0x7f090079
+int id button6 0x7f09007a
+int id button7 0x7f09007b
 int id button8 0x7f09007c
 int id button9 0x7f09007d
 int id buttonPanel 0x7f09007e
@@ -2731,7 +2728,6 @@ int id default_activity_button 0x7f0900af
 int id delProfession 0x7f0900b0
 int id deleteCategory 0x7f0900b1
 int id deltaRelative 0x7f0900b2
-int id denyTask 0x7f090217
 int id dependency_ordering 0x7f0900b3
 int id description 0x7f0900b4
 int id design_bottom_sheet 0x7f0900b5
@@ -2805,7 +2801,6 @@ int id ignoreRequest 0x7f0900f8
 int id image 0x7f0900f9
 int id immediateStop 0x7f0900fa
 int id included 0x7f0900fb
-int id incomingTasks 0x7f090218
 int id info 0x7f0900fc
 int id instructions 0x7f0900fd
 int id intervalDropdown 0x7f0900fe
@@ -2856,7 +2851,6 @@ int id material_value_index 0x7f09012a
 int id message 0x7f09012b
 int id middle 0x7f09012c
 int id mini 0x7f09012d
-int id modifyState 0x7f090219
 int id month_grid 0x7f09012e
 int id month_navigation_bar 0x7f09012f
 int id month_navigation_fragment_toggle 0x7f090130
@@ -3014,10 +3008,6 @@ int id tag_transition_group 0x7f0901c7
 int id tag_unhandled_key_event_manager 0x7f0901c8
 int id tag_unhandled_key_listeners 0x7f0901c9
 int id tag_window_insets_animation_callback 0x7f0901ca
-int id taskDate 0x7f09021a
-int id taskInstruction 0x7f09021b
-int id taskLocation 0x7f09021c
-int id taskName 0x7f09021d
 int id test_checkbox_android_button_tint 0x7f0901cb
 int id test_checkbox_app_button_tint 0x7f0901cc
 int id test_radiobutton_android_button_tint 0x7f0901cd
@@ -3029,11 +3019,12 @@ int id textSpacerNoButtons 0x7f0901d2
 int id textSpacerNoTitle 0x7f0901d3
 int id textStart 0x7f0901d4
 int id textTop 0x7f0901d5
+int id textView10 0x7f0901d6
 int id textView2 0x7f0901d7
 int id textView4 0x7f0901d8
+int id textView5 0x7f0901d9
 int id textView7 0x7f0901da
 int id textView8 0x7f0901db
-int id textView9 0x7f09021e
 int id text_input_end_icon 0x7f0901dc
 int id text_input_error_icon 0x7f0901dd
 int id text_input_start_icon 0x7f0901de
@@ -3331,6 +3322,7 @@ int string common_google_play_services_wear_update_text 0x7f100033
 int string common_open_on_phone 0x7f100034
 int string common_signin_button_text 0x7f100035
 int string common_signin_button_text_long 0x7f100036
+int string database_url 0x7f10009e
 int string default_web_client_id 0x7f100037
 int string error_icon_content_description 0x7f100038
 int string exposed_dropdown_menu_content_description 0x7f100039

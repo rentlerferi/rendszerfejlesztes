@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">APi</string>
+    <string name="database_url">https://rendszerfejlesztes-3b7df-default-rtdb.europe-west1.firebasedatabase.app/</string>
     <string-array name="roles">
         <item>Admin</item>
         <item>Operator</item>
