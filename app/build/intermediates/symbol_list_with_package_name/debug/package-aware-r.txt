@@ -2557,6 +2557,7 @@ id BOTTOM_START
 id CTRL
 id FUNCTION
 id ID
+id ID2
 id Knw1
 id Knw2
 id Knw3
@@ -2632,7 +2633,9 @@ id actions
 id activity_chooser_view_content
 id add
 id addCategory
+id addProfession
 id addTool
+id addUser
 id adjust_height
 id adjust_width
 id alertTitle
@@ -2723,6 +2726,7 @@ id decelerate
 id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
+id delProfession
 id deleteCategory
 id deltaRelative
 id dependency_ordering
@@ -2811,6 +2815,7 @@ id item4
 id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
+id knw
 id labeled
 id layout
 id left
@@ -3160,7 +3165,9 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_add_profession
 layout activity_admin
+layout activity_admin_menu
 layout activity_main
 layout activity_operator
 layout activity_repairer

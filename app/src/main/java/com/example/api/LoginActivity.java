@@ -69,7 +69,6 @@ public class LoginActivity extends AppCompatActivity {
                 for (DataSnapshot item: snapshot.getChildren()) {
                     uIds.add(item.getKey());
                 }
-                    Log.d("SUS",uIds.toString());
             }
 
             @Override
