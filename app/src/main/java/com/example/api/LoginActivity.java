@@ -1,17 +1,13 @@
 package com.example.api;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,49 +20,39 @@ import java.util.ArrayList;
 public class LoginActivity extends AppCompatActivity {
 
     EditText log_auth;
-
-    private FirebaseAuth mAuth;
     FirebaseDatabase database;
     DatabaseReference myRef;
     ArrayList<String> uIds = new ArrayList<>();
+    private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        log_auth=findViewById(R.id.Login_auth);
-
-
+        log_auth = findViewById(R.id.Login_auth);
         mAuth = FirebaseAuth.getInstance();
-
     }
+
     @Override
     public void onStart() {
         super.onStart();
-        mAuth.signInAnonymously()
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d("TAG", "signInAnonymously:success");
+        mAuth.signInAnonymously().addOnCompleteListener(this, task -> {
+            if (task.isSuccessful()) {
 
+            } else {
 
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w("TAG", "signInAnonymously:failure", task.getException());
+            }
+        });
 
-                        }
-                    }
-                });
-
-        database = FirebaseDatabase.getInstance("https://rendszerfejlesztes-3b7df-default-rtdb.europe-west1.firebasedatabase.app/");
+        database = FirebaseDatabase.getInstance(getResources().getString(R.string.database_url));
         myRef = database.getReference();
-        String code=log_auth.getText().toString();
+        String code = log_auth.getText().toString();
+
         myRef.child("Users").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                for (DataSnapshot item: snapshot.getChildren()) {
+                for (DataSnapshot item : snapshot.getChildren()) {
                     uIds.add(item.getKey());
                 }
             }
@@ -77,17 +63,16 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
     public void Login(View view) {
         String uId = log_auth.getText().toString().trim().toUpperCase();
-        if(uIds.contains(uId)){
-            Log.d("SUS","yes");
+        if (uIds.contains(uId)) {
             myRef.child("Users").child(uId).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     User user = snapshot.getValue(User.class);
-                    Log.d("sus",user.toString());
 
-                    switch(user.getRole()){
+                    switch (user.getRole()) {
                         case "Admin":
                             Intent a = new Intent(LoginActivity.this, AdminMenu.class);
                             startActivity(a);
@@ -104,7 +89,7 @@ public class LoginActivity extends AppCompatActivity {
                             finish();
                             break;
                         case "ToolCorrespondent":
-                            Intent d = new Intent(LoginActivity.this, ToolCorresponentMenu.class);
+                            Intent d = new Intent(LoginActivity.this, ToolCorrespondentMenu.class);
                             startActivity(d);
                             finish();
                             break;
@@ -118,10 +103,5 @@ public class LoginActivity extends AppCompatActivity {
                 }
             });
         }
-
-
     }
-
-
-
 }

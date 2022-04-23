@@ -14,7 +14,7 @@ public class Category {
         this.norma = norma;
     }
 
-    public Category(){}
+    public Category() { }
 
     public String getName() {
         return name;

@@ -10087,7 +10087,7 @@
         <item>Operator</item>
         <item>Repairer</item>
         <item>ToolCorrespondent</item>
-    </string-array></file><file path="D:\GitHub\rendszerfejlesztes\app\src\main\res\values\themes.xml" qualifiers=""><style name="Theme.APi" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    </string-array><string name="database_url">https://rendszerfejlesztes-3b7df-default-rtdb.europe-west1.firebasedatabase.app/</string></file><file path="D:\GitHub\rendszerfejlesztes\app\src\main\res\values\themes.xml" qualifiers=""><style name="Theme.APi" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>

@@ -161,12 +161,12 @@ ADDED from D:\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:27:9-29
 		ADDED from D:\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:29:13-37
 	android:name
 		ADDED from D:\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:28:13-37
-activity#com.example.api.ToolCorresponentMenu
+activity#com.example.api.ToolCorrespondentMenu
 ADDED from D:\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:30:9-32:40
 	android:exported
 		ADDED from D:\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:32:13-37
 	android:name
-		ADDED from D:\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:31:13-49
+		ADDED from D:\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:31:13-50
 activity#com.example.api.ToolCorrespondentCategory
 ADDED from D:\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:33:9-35:40
 	android:exported

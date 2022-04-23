@@ -3322,6 +3322,7 @@ int string common_google_play_services_wear_update_text 0x7f100033
 int string common_open_on_phone 0x7f100034
 int string common_signin_button_text 0x7f100035
 int string common_signin_button_text_long 0x7f100036
+int string database_url 0x7f10009e
 int string default_web_client_id 0x7f100037
 int string error_icon_content_description 0x7f100038
 int string exposed_dropdown_menu_content_description 0x7f100039

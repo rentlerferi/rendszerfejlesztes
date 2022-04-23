@@ -75,8 +75,8 @@
 43-->D:\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:29:13-37
 44        <activity
 44-->D:\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:30:9-32:40
-45            android:name="com.example.api.ToolCorresponentMenu"
-45-->D:\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:31:13-49
+45            android:name="com.example.api.ToolCorrespondentMenu"
+45-->D:\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:31:13-50
 46            android:exported="false" />
 46-->D:\GitHub\rendszerfejlesztes\app\src\main\AndroidManifest.xml:32:13-37
 47        <activity

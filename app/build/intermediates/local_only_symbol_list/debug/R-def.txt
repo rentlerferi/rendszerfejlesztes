@@ -63,6 +63,7 @@ layout activity_tool_correspondent_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
+string database_url
 string default_web_client_id
 string firebase_database_url
 string gcm_defaultSenderId

@@ -28,7 +28,7 @@
             android:name=".Operator"
             android:exported="false" />
         <activity
-            android:name=".ToolCorresponentMenu"
+            android:name=".ToolCorrespondentMenu"
             android:exported="false" />
         <activity
             android:name=".ToolCorrespondentCategory"
