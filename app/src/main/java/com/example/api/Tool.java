@@ -54,5 +54,4 @@ public class Tool{
         this.location = location;
         this.description = description;
     }
-
 }

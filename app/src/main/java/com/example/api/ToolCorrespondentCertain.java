@@ -1,8 +1,5 @@
 package com.example.api;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -31,6 +31,7 @@ public class ToolCorrespondentCertain extends AppCompatActivity {
     int toolID;
 
     DatabaseReference ref;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +43,7 @@ public class ToolCorrespondentCertain extends AppCompatActivity {
         ID = findViewById(R.id.toolID);
         location = findViewById(R.id.toolLocation);
         toolDescription = findViewById(R.id.description);
-        ref = FirebaseDatabase.getInstance("https://rendszerfejlesztes-3b7df-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Tool Categories");
+        ref = FirebaseDatabase.getInstance(getResources().getString(R.string.database_url)).getReference("Tool Categories");
         //DatabaseReference categoryRef = ref.child(1);
 
         categoryItems = new ArrayList<>();
@@ -53,7 +54,7 @@ public class ToolCorrespondentCertain extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 categoryItems.clear();
-                for(DataSnapshot snapshot : dataSnapshot.getChildren()){
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     categoryItems.add(snapshot.getKey());
                 }
                 adapter.notifyDataSetChanged();
@@ -67,29 +68,24 @@ public class ToolCorrespondentCertain extends AppCompatActivity {
             }
         });
 
-        addTool.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(!name.getText().toString().equals("") &&
-                !ID.getText().toString().equals("") &&
-                !location.getText().toString().equals("")) {
-                    toolName = name.getText().toString();
-                    toolID = Integer.parseInt(ID.getText().toString());
-                    toolLocation = location.getText().toString();
-                    toolCategory = category.getSelectedItem().toString();
-                    description = toolDescription.getText().toString();
+        addTool.setOnClickListener(view -> {
+            if (!name.getText().toString().equals("") &&
+                    !ID.getText().toString().equals("") &&
+                    !location.getText().toString().equals("")) {
+                toolName = name.getText().toString();
+                toolID = Integer.parseInt(ID.getText().toString());
+                toolLocation = location.getText().toString();
+                toolCategory = category.getSelectedItem().toString();
+                description = toolDescription.getText().toString();
 
-                    Tool tool = new Tool(toolName, toolID, toolLocation, description);
+                Tool tool = new Tool(toolName, toolID, toolLocation, description);
 
-                    DatabaseReference toolRef = FirebaseDatabase.getInstance("https://rendszerfejlesztes-3b7df-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Tool Categories").child(toolCategory);
+                DatabaseReference toolRef = FirebaseDatabase.getInstance(getResources().getString(R.string.database_url)).getReference("Tool Categories").child(toolCategory);
 
-                    toolRef.child(toolName).setValue(tool);
-                } else {
-                    Toast.makeText(ToolCorrespondentCertain.this, "Fill all the required fields!", Toast.LENGTH_SHORT).show();
-                }
-
+                toolRef.child(toolName).setValue(tool);
+            } else {
+                Toast.makeText(ToolCorrespondentCertain.this, "Fill all the required fields!", Toast.LENGTH_SHORT).show();
             }
         });
     }
-
 }
