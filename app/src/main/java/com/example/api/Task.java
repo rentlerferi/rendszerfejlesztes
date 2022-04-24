@@ -23,12 +23,11 @@ public class Task {
         this.status = status;
         this.interval = interval;
     }
-    public Task(String itemName, String location, String instruction, String date, String status, String interval, boolean isEmergency) {
+    public Task(String itemName, String location, String instruction, String date, String interval, boolean isEmergency) {
         this.itemName = itemName;
         this.location = location;
         this.instruction = instruction;
         this.date = date;
-        this.status = status;
         this.interval = interval;
         this.isEmergency = isEmergency;
 
