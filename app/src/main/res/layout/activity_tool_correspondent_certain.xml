@@ -23,35 +23,39 @@
         android:minHeight="48dp" />
 
     <EditText
-        android:id="@+id/toolID"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="ID"
-        android:inputType="textPersonName" />
-
-    <EditText
         android:id="@+id/toolLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Location"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/description"
+        android:id="@+id/toolDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Description"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/toolId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="ID"
+        android:inputType="textPersonName"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <Spinner
-        android:id="@+id/category"
-        android:spinnerMode="dropdown"
-        android:background="@android:drawable/btn_dropdown"
+        android:id="@+id/toolCategory"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <LinearLayout
         android:layout_width="match_parent"

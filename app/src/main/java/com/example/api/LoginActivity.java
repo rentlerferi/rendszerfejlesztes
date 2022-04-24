@@ -79,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
                             finish();
                             break;
                         case "Operator":
-                            Intent b = new Intent(LoginActivity.this, Operator.class);
+                            Intent b = new Intent(LoginActivity.this, OperatorMenu.class);
                             startActivity(b);
                             finish();
                             break;
