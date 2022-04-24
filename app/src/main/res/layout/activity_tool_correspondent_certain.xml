@@ -49,6 +49,14 @@
         android:inputType="textPersonName"
         tools:ignore="TouchTargetSizeCheck" />
 
+    <EditText
+        android:id="@+id/taskInstruction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Task Instruction"
+        android:inputType="textPersonName" />
+
     <Spinner
         android:id="@+id/toolCategory"
         android:layout_width="match_parent"
@@ -63,7 +71,7 @@
 
         <Button
             android:id="@+id/addTool"
-            android:layout_width="135dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Add" />
 
