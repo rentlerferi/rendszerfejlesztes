@@ -41,21 +41,13 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/toolId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="ID"
-        android:inputType="textPersonName"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <EditText
         android:id="@+id/taskInstruction"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Task Instruction"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:minHeight="48dp" />
 
     <Spinner
         android:id="@+id/toolCategory"

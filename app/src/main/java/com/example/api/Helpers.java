@@ -10,7 +10,7 @@ import java.util.Date;
 public class Helpers {
 
     @SuppressLint("NewApi")
-    private static String getTime(String interval) {
+    public static String getTime(String interval) {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date();
 
