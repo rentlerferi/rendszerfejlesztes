@@ -9,6 +9,7 @@ import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +24,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -39,7 +41,7 @@ public class EmergencyTasks extends AppCompatActivity {
 
     FirebaseDatabase fb;
     DatabaseReference tool_ref, task_ref;
-
+    String date_date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,20 +50,20 @@ public class EmergencyTasks extends AppCompatActivity {
 
         BuTtOn1 = findViewById(R.id.commitBttn);
         list = findViewById(R.id.itemList);
-        instructions = findViewById(R.id.instructions);
+        instructions = findViewById(R.id.Instructions);
         date = findViewById(R.id.date);
         location = findViewById(R.id.Location);
 
         fb = FirebaseDatabase.getInstance(getResources().getString(R.string.database_url));
         tool_ref = fb.getReference("Tool Categories");
-        task_ref = fb.getReference("Task");
+        task_ref = fb.getReference("Tasks");
 
         all_tools = new ArrayList<>();
         ArrayAdapter<String> tool_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, all_tools);
         list.setAdapter(tool_adapter);
         HashMap<String, Tool> tools_hess  = new HashMap<>();
 
-        HashMap<String, String > fcingthing  = new HashMap<>();
+        HashMap<String, String> fcingthing  = new HashMap<>();
 
         tool_ref.addValueEventListener(new ValueEventListener() {
             @Override
@@ -114,13 +116,22 @@ public class EmergencyTasks extends AppCompatActivity {
             }
         });
 
+        date.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            //show the selected date as a toast
+            @Override
+            public void onSelectedDayChange(CalendarView view, int year, int month, int day) {
+                month++;
+                String strMonth = (month < 10) ? String.format("0%d", month) : String.valueOf(month);
+                String strDay = (day < 10) ? String.format("0%d", day) : String.valueOf(day);
+                date_date = String.format("%d-%s-%s", year, strMonth, strDay);
+            }
+        });
+
 
         BuTtOn1.setOnClickListener(view -> {
-            SimpleDateFormat simpleDateFormatter = new SimpleDateFormat("yyyy-MM-dd");
-            String date_date = simpleDateFormatter.format(date.getDate()).toString();
             Tool aTool = tools_hess.get(idx);
-            Task task=new Task(aTool.getName(),aTool.getLocation(),instructions.getText().toString(),date_date,fcingthing.get(aTool.getCategory()),true);
-            task_ref.push().setValue(task);
+            Task task = new Task(aTool.getName(), aTool.getLocation(), instructions.getText().toString(), date_date, fcingthing.get(aTool.getCategory()),true);
+            task_ref.child(aTool.getName()).setValue(task);
             
         });
 

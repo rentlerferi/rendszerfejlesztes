@@ -81,7 +81,7 @@ public class ToolCorrespondentCertain extends AppCompatActivity {
 
                 DatabaseReference toolRef = FirebaseDatabase.getInstance(getResources().getString(R.string.database_url)).getReference("Tool Categories").child(tool_category);
 
-                toolRef.child(String.valueOf(tool_id)).setValue(tool);
+                toolRef.child(String.valueOf(tool_name)).setValue(tool);
             } else {
                 Toast.makeText(ToolCorrespondentCertain.this, "Fill all the required fields!", Toast.LENGTH_SHORT).show();
             }
