@@ -41,7 +41,13 @@ id incomingTasks
 id instructions
 id intervalDropdown
 id isEmergency
+id itemDate
+id itemEmOrNot
+id itemInstruction
 id itemList
+id itemLocation
+id itemName
+id itemStatus
 id knowledge
 id norma
 id repairer_list

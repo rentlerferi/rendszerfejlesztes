@@ -2814,7 +2814,13 @@ int id item1 0x7f090104
 int id item2 0x7f090105
 int id item3 0x7f090106
 int id item4 0x7f090107
+int id itemDate 0x7f090223
+int id itemEmOrNot 0x7f090224
+int id itemInstruction 0x7f090225
 int id itemList 0x7f090108
+int id itemLocation 0x7f090226
+int id itemName 0x7f090227
+int id itemStatus 0x7f090228
 int id item_touch_helper_previous_elevation 0x7f090109
 int id jumpToEnd 0x7f09010a
 int id jumpToStart 0x7f09010b
