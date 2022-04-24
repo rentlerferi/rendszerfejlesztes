@@ -21,7 +21,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Instructions"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/norma"
@@ -29,7 +30,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Norma"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <Spinner
         android:id="@+id/intervalDropdown"
@@ -37,7 +39,7 @@
         android:layout_height="wrap_content"
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <LinearLayout
         android:layout_width="match_parent"

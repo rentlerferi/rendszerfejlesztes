@@ -20,7 +20,7 @@ public class OperatorMenu extends AppCompatActivity {
 
         Bt1.setOnClickListener(view -> {
             Intent i = new Intent();
-            i.setClass(OperatorMenu.this, OperatorAsign.class);
+            i.setClass(OperatorMenu.this, OperatorAssign.class);
             startActivity(i);
         });
 

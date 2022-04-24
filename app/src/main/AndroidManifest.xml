@@ -31,7 +31,7 @@
             android:name=".Repairer"
             android:exported="false" />
         <activity
-            android:name=".OperatorAsign"
+            android:name=".OperatorAssign"
             android:exported="false" />
         <activity
             android:name=".ToolCorrespondentMenu"

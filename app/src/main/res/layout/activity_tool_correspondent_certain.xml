@@ -28,7 +28,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Location"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/toolDescription"
@@ -36,7 +37,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Description"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/toolId"
@@ -44,14 +46,16 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="ID"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <Spinner
         android:id="@+id/toolCategory"
-        android:spinnerMode="dropdown"
-        android:background="@android:drawable/btn_dropdown"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <LinearLayout
         android:layout_width="match_parent"
