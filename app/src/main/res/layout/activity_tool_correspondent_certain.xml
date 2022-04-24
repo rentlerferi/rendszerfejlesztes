@@ -41,13 +41,13 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/toolId"
+        android:id="@+id/taskInstruction"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="ID"
+        android:hint="Task Instruction"
         android:inputType="textPersonName"
-        tools:ignore="TouchTargetSizeCheck" />
+        android:minHeight="48dp" />
 
     <EditText
         android:id="@+id/taskInstruction"
