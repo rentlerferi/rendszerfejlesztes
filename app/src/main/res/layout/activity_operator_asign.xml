@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Operator">
+    tools:context=".OperatorAsign">
 
     <Space
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
         android:text="Tasks" />
 
     <Spinner
-        android:id="@+id/repairer_list"
+        android:id="@+id/tasks_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="48dp"
@@ -35,7 +35,7 @@
         android:text="Repairers" />
 
     <Spinner
-        android:id="@+id/tasks_list"
+        android:id="@+id/repairer_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="48dp"
