@@ -8,7 +8,6 @@ public class Category {
     private int norma;
 
     public Category(String interval, String instructions, int norma) {
-        //this.name = name;
         this.interval = interval;
         this.instructions = instructions;
         this.norma = norma;
