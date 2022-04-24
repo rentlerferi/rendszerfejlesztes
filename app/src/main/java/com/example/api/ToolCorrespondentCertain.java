@@ -26,7 +26,6 @@ import java.util.ArrayList;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 
 public class ToolCorrespondentCertain extends AppCompatActivity {
 
@@ -56,7 +55,6 @@ public class ToolCorrespondentCertain extends AppCompatActivity {
         toolDescription = findViewById(R.id.toolDescription);
         taskInstruction = findViewById(R.id.taskInstruction);
         ref = FirebaseDatabase.getInstance(getResources().getString(R.string.database_url)).getReference();
-        //DatabaseReference categoryRef = ref.child(1);
 
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, categoryNames);
