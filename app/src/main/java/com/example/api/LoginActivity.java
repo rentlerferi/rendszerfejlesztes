@@ -85,6 +85,7 @@ public class LoginActivity extends AppCompatActivity {
                             break;
                         case "Repairer":
                             Intent c = new Intent(LoginActivity.this, Repairer.class);
+                            c.putExtra("id", uId);
                             startActivity(c);
                             finish();
                             break;
