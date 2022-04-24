@@ -50,11 +50,11 @@ public class ToolCorrespondentCategory extends AppCompatActivity {
         deleteCategory = findViewById(R.id.deleteCategory);
 
         intervals = new ArrayList<>();
-        intervals.add("weekly");
-        intervals.add("monthly");
-        intervals.add("quarter yearly");
-        intervals.add("half yearly");
-        intervals.add("yearly");
+        intervals.add("Weekly");
+        intervals.add("Monthly");
+        intervals.add("Quarter yearly");
+        intervals.add("Half yearly");
+        intervals.add("Yearly");
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, intervals);
         intervalDropdown.setAdapter(adapter);
 
