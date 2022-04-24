@@ -16,10 +16,10 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class OperatorAsign extends AppCompatActivity {
+public class OperatorAssign extends AppCompatActivity {
 
     Spinner repairers_list,tasks_list;
-    Button asingBt , unsignBt;
+    Button assignBt, unassignBt;
     ArrayList<String> repairer_array_list,task_array_list;
 
     FirebaseDatabase fb;
@@ -28,24 +28,23 @@ public class OperatorAsign extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_operator_asign);
+        setContentView(R.layout.activity_operator_assign);
 
         repairers_list=findViewById(R.id.repairer_list);
         tasks_list=findViewById(R.id.tasks_list);
-        asingBt=findViewById(R.id.button8);
-        unsignBt=findViewById(R.id.button9);
+        assignBt =findViewById(R.id.assignBtn);
+        unassignBt =findViewById(R.id.unassignBtn);
 
         fb= FirebaseDatabase.getInstance(getResources().getString(R.string.database_url));
 
-        rep_ref=fb.getReference("User");
+        rep_ref=fb.getReference("Users");
         task_ref=fb.getReference("Tasks");
-
 
         repairer_array_list = new ArrayList<>();
         task_array_list = new ArrayList<>();
 
-        ArrayAdapter<String> rep_adapter = new ArrayAdapter<String>(OperatorAsign.this, android.R.layout.simple_spinner_dropdown_item, repairer_array_list);
-        ArrayAdapter<String> tas_adapter = new ArrayAdapter<String>(OperatorAsign.this, android.R.layout.simple_spinner_dropdown_item, task_array_list);
+        ArrayAdapter<String> rep_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, repairer_array_list);
+        ArrayAdapter<String> tas_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, task_array_list);
 
         tasks_list.setAdapter(tas_adapter);
         repairers_list.setAdapter(rep_adapter);

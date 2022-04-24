@@ -4,11 +4,10 @@ public class Category {
 
     private String name;
     private String interval;
-    private String instructions;
+    private String instructions = "";
     private int norma;
 
     public Category(String interval, String instructions, int norma) {
-        //this.name = name;
         this.interval = interval;
         this.instructions = instructions;
         this.norma = norma;
