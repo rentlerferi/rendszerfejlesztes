@@ -3,7 +3,6 @@ package com.example.api;
 public class Tool{
 
     private String name;
-    private int id;
     private String location;
     private String category;
     private String description;
@@ -32,14 +31,6 @@ public class Tool{
         this.name = name;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getLocation() {
         return location;
     }
@@ -48,10 +39,11 @@ public class Tool{
         this.location = location;
     }
 
-    public Tool(String name, int id, String location, String description){
+    public Tool(String name, String location, String description){
         this.name = name;
-        this.id = id;
         this.location = location;
         this.description = description;
     }
+    public Tool(){}
+
 }

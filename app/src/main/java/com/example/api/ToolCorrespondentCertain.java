@@ -1,9 +1,9 @@
 package com.example.api;
 
-import android.annotation.SuppressLint;
+import static com.example.api.Helpers.getTime;
+
 import android.os.Bundle;
 import android.util.Log;
-import android.util.Pair;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,13 +18,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.ArrayList;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 
 public class ToolCorrespondentCertain extends AppCompatActivity {
@@ -36,8 +30,7 @@ public class ToolCorrespondentCertain extends AppCompatActivity {
     ArrayList<String> categoryNames = new ArrayList<>();
 
 
-    String tool_name, tool_location, tool_category, tool_description,task_istruction;
-    int tool_id;
+    String tool_name, tool_location, tool_category, tool_description, task_instruction;
 
     DatabaseReference ref;
 
@@ -84,40 +77,22 @@ public class ToolCorrespondentCertain extends AppCompatActivity {
                     !toolId.getText().toString().equals("") &&
                     !toolLocation.getText().toString().equals("")) {
                 tool_name = toolName.getText().toString();
-                tool_id = Integer.parseInt(toolId.getText().toString());
                 tool_location = toolLocation.getText().toString();
                 tool_category = toolCategory.getSelectedItem().toString();
                 tool_description = toolDescription.getText().toString();
-                task_istruction = taskInstruction.getText().toString();
+                task_instruction = taskInstruction.getText().toString();
 
-                Tool tool = new Tool(tool_name, tool_id, tool_location, tool_description);
-                Task task = new Task(tool_name, tool_location, task_istruction,getTime(categories.get(tool_category).getInterval()),"Unassigned");
+                Tool tool = new Tool(tool_name, tool_location, tool_description);
+                Task task = new Task(tool_name, tool_location, task_instruction, getTime(categories.get(tool_category).getInterval()), categories.get(tool_category).getInterval(),"Unassigned");
 
                 DatabaseReference toolRef = ref.child("Tool Categories").child(tool_category).child("Tools");
-                DatabaseReference taskRef = ref.child("Tasks").push();
+                DatabaseReference taskRef = ref.child("Tasks").child(tool_name);
 
-                toolRef.child(String.valueOf(tool_id)).setValue(tool);
+                toolRef.child(tool_name).setValue(tool);
                 taskRef.setValue(task);
             } else {
                 Toast.makeText(ToolCorrespondentCertain.this, "Fill all the required fields!", Toast.LENGTH_SHORT).show();
             }
         });
     }
-    @SuppressLint("NewApi")
-    private String getTime(String interval) {
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-        Date date = new Date();
-
-        switch (interval){
-
-            case "Weekly": date = Date.from((LocalDate.now().plusWeeks(1)).atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()); break;
-            case "Monthly": date = Date.from((LocalDate.now().plusMonths(1)).atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()); break;
-            case "Quarter yearly": date = Date.from((LocalDate.now().plusMonths(3)).atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()); break;
-            case "Half yearly": date = Date.from((LocalDate.now().plusMonths(6)).atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()); break;
-            case "Yearly": date = Date.from((LocalDate.now().plusYears(1)).atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()); break;
-
-        }
-        return formatter.format(date).toString();
-    }
-
 }
