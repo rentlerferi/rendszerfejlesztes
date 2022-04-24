@@ -43,7 +43,7 @@ public class ToolCorrespondentCertain extends AppCompatActivity {
         toolCategory = findViewById(R.id.toolCategory);
         addTool = findViewById(R.id.addTool);
         toolName = findViewById(R.id.toolName);
-        toolId = findViewById(R.id.toolId);
+        //toolId = findViewById(R.id.toolId);
         toolLocation = findViewById(R.id.toolLocation);
         toolDescription = findViewById(R.id.toolDescription);
         taskInstruction = findViewById(R.id.taskInstruction);
@@ -74,7 +74,6 @@ public class ToolCorrespondentCertain extends AppCompatActivity {
 
         addTool.setOnClickListener(view -> {
             if (!toolName.getText().toString().equals("") &&
-                    !toolId.getText().toString().equals("") &&
                     !toolLocation.getText().toString().equals("")) {
                 tool_name = toolName.getText().toString();
                 tool_location = toolLocation.getText().toString();

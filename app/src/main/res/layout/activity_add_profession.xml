@@ -8,7 +8,7 @@
     tools:context=".AddProfession">
 
     <EditText
-        android:id="@+id/ID2"
+        android:id="@+id/userID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -22,12 +22,12 @@
         app:layout_constraintTop_toBottomOf="@+id/Name" />
 
     <EditText
-        android:id="@+id/knw"
+        android:id="@+id/knowledge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:ems="10"
-        android:hint="Knowledge 1"
+        android:hint="Knowledge"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
