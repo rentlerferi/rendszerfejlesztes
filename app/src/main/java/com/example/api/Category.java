@@ -4,7 +4,7 @@ public class Category {
 
     private String name;
     private String interval;
-    private String requirements;
+    private String instructions = "";
     private int norma;
 
     public Category(String interval, String instructions, int norma) {

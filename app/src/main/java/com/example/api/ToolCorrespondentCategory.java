@@ -29,7 +29,7 @@ public class ToolCorrespondentCategory extends AppCompatActivity {
     Spinner intervalDropdown;
 
     EditText name, instruction, norma;
-    Button addCategory, updateCategory, deleteCategory;
+    Button addCategory, deleteCategory;
 
     String categoryName, cInstructions, cInterval;
     int cNorma;
@@ -46,7 +46,6 @@ public class ToolCorrespondentCategory extends AppCompatActivity {
         instruction = findViewById(R.id.instructions);
         norma = findViewById(R.id.norma);
         addCategory = findViewById(R.id.addCategory);
-        updateCategory = findViewById(R.id.updateCategory);
         deleteCategory = findViewById(R.id.deleteCategory);
 
         intervals = new ArrayList<>();
@@ -60,24 +59,6 @@ public class ToolCorrespondentCategory extends AppCompatActivity {
 
         ref = FirebaseDatabase.getInstance(getResources().getString(R.string.database_url)).getReference("Tool Categories");
 
-        addCategory.setOnClickListener(view -> {
-            if (!name.getText().toString().equals("") &&
-                    !instruction.getText().toString().equals("") &&
-                    !norma.getText().toString().equals("")) {
-
-                categoryName = name.getText().toString();
-                cInstructions = instruction.getText().toString();
-                cInterval = intervalDropdown.getSelectedItem().toString();
-                cNorma = Integer.parseInt(norma.getText().toString());
-
-                Category category = new Category(cInterval, cInstructions, cNorma);
-
-                ref.child(categoryName).setValue(category);
-            } else {
-                Toast.makeText(ToolCorrespondentCategory.this, "Fill all the required fields!", Toast.LENGTH_SHORT).show();
-            }
-        });
-
         name.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -86,24 +67,19 @@ public class ToolCorrespondentCategory extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                //Toast.makeText(ToolCorrespondentCategory.this, charSequence.toString(), Toast.LENGTH_SHORT).show();
                 ref.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        //categoryItems.clear();
                         for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                            if (Objects.equals(snapshot.getKey(), charSequence.toString())) {
-                                instruction.setHint(snapshot.getValue(Category.class).getInstructions());
-                                norma.setHint(String.valueOf(snapshot.getValue(Category.class).getNorma()));
-                                for (int inc = 0; inc < intervals.size(); inc++) {
-                                    if (intervals.get(inc).equals(snapshot.getValue(Category.class).getInterval())) {
-                                        intervalDropdown.setSelection(inc);
-                                        break;
-                                    }
-                                }
-                                //instruction.setHint(snapshot.getValue(Category.class).getInstructions());
-                                Toast.makeText(ToolCorrespondentCategory.this, snapshot.getKey(), Toast.LENGTH_SHORT).show();
-
+                            Category category = snapshot.getValue(Category.class);
+                            if (snapshot.getKey().equals(charSequence.toString())) {
+                                instruction.setHint(category.getInstructions());
+                                norma.setHint(String.valueOf(category.getNorma()));
+                                intervalDropdown.setSelection(intervals.indexOf(category.getInterval()));
+                                break;
+                            }
+                            else {
+                                resetValues();
                             }
                         }
                     }
@@ -121,52 +97,36 @@ public class ToolCorrespondentCategory extends AppCompatActivity {
             }
         });
 
-        updateCategory.setOnClickListener(view -> ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                //categoryItems.clear();
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    if (Objects.equals(snapshot.getKey(), name.getText().toString())) {
-                        if (!name.getText().toString().equals("") &&
-                                !instruction.getText().toString().equals("") &&
-                                !norma.getText().toString().equals("")) {
+        addCategory.setOnClickListener(view -> {
+            if (!name.getText().toString().equals("") &&
+                    !instruction.getText().toString().equals("") &&
+                    !norma.getText().toString().equals("")) {
 
-                            categoryName = name.getText().toString();
-                            cInstructions = instruction.getText().toString();
-                            cInterval = intervalDropdown.getSelectedItem().toString();
-                            cNorma = Integer.parseInt(norma.getText().toString());
+                categoryName = name.getText().toString();
+                cInstructions = instruction.getText().toString();
+                cInterval = intervalDropdown.getSelectedItem().toString();
+                cNorma = Integer.parseInt(norma.getText().toString());
 
-                            //Category category = new Category(cInterval, cInstructions, cNorma);
-
-                            ref.child(categoryName).child("instructions").setValue(cInstructions);
-                            ref.child(categoryName).child("interval").setValue(cInterval);
-                            ref.child(categoryName).child("norma").setValue(cNorma);
-                            break;
-                        } else {
-                            Toast.makeText(ToolCorrespondentCategory.this, "Fill all the required fields!", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                }
+                Category category = new Category(cInterval, cInstructions, cNorma);
+                ref.child(categoryName).setValue(category);
+                finish();
+            } else {
+                Toast.makeText(ToolCorrespondentCategory.this, "Fill all the required fields!", Toast.LENGTH_SHORT).show();
             }
+        });
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.w("TAG", "loadPost:onCancelled", error.toException());
-            }
-        }));
 
         deleteCategory.setOnClickListener(view -> ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                //categoryItems.clear();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     if (Objects.equals(snapshot.getKey(), name.getText().toString())) {
                         if (!name.getText().toString().equals("")) {
                             categoryName = name.getText().toString();
                             ref.child(categoryName).removeValue();
-                            break;
+                            finish();
                         } else {
-                            Toast.makeText(ToolCorrespondentCategory.this, "Fill all the required fields!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ToolCorrespondentCategory.this, "Fill the name field!", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }
@@ -177,5 +137,12 @@ public class ToolCorrespondentCategory extends AppCompatActivity {
                 Log.w("TAG", "loadPost:onCancelled", error.toException());
             }
         }));
+    }
+
+    private void resetValues(){
+        name.setHint("Name");
+        instruction.setHint("Instructions");
+        norma.setHint("Norma");
+        intervalDropdown.setSelection(0);
     }
 }

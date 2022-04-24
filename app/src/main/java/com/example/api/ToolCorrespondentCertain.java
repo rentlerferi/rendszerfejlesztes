@@ -26,7 +26,6 @@ import java.util.ArrayList;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 
 public class ToolCorrespondentCertain extends AppCompatActivity {
 
@@ -56,7 +55,6 @@ public class ToolCorrespondentCertain extends AppCompatActivity {
         toolDescription = findViewById(R.id.toolDescription);
         taskInstruction = findViewById(R.id.taskInstruction);
         ref = FirebaseDatabase.getInstance(getResources().getString(R.string.database_url)).getReference();
-        //DatabaseReference categoryRef = ref.child(1);
 
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, categoryNames);
@@ -93,13 +91,14 @@ public class ToolCorrespondentCertain extends AppCompatActivity {
                 task_istruction = taskInstruction.getText().toString();
 
                 Tool tool = new Tool(tool_name, tool_id, tool_location, tool_description);
-                Task task = new Task(tool_name, tool_location, task_istruction,getTime(categories.get(tool_category).getInterval()),"Unassigned");
+                Task task = new Task(tool_name, tool_location, task_istruction, getTime(categories.get(tool_category).getInterval()),"Unassigned", categories.get(tool_category).getInterval());
 
                 DatabaseReference toolRef = ref.child("Tool Categories").child(tool_category).child("Tools");
                 DatabaseReference taskRef = ref.child("Tasks").push();
 
                 toolRef.child(String.valueOf(tool_id)).setValue(tool);
                 taskRef.setValue(task);
+                finish();
             } else {
                 Toast.makeText(ToolCorrespondentCertain.this, "Fill all the required fields!", Toast.LENGTH_SHORT).show();
             }
