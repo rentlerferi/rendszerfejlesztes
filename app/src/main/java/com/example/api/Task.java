@@ -10,23 +10,27 @@ public class Task {
     public String status = "Unasigned";
     public boolean isEmergency = false;
     public String repairerID="";
+    public String interval;
 
     public Task(){
     }
 
-    public Task(String itemName, String location, String instruction, String date, String status) {
+    public Task(String itemName, String location, String instruction, String date, String status, String interval) {
         this.itemName = itemName;
         this.location = location;
         this.instruction = instruction;
         this.date = date;
         this.status = status;
+        this.interval = interval;
     }
-    public Task(String itemName, String location, String instruction, String date, String status,boolean isEmergency) {
+    public Task(String itemName, String location, String instruction, String date, String status, String interval, boolean isEmergency) {
         this.itemName = itemName;
         this.location = location;
         this.instruction = instruction;
         this.date = date;
         this.status = status;
+        this.interval = interval;
         this.isEmergency = isEmergency;
+
     }
 }
