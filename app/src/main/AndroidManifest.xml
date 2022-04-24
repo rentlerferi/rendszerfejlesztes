@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.APi">
         <activity
+            android:name=".EmergencyTasks"
+            android:exported="false" />
+        <activity
+            android:name=".OperatorMenu"
+            android:exported="false" />
+        <activity
             android:name=".AdminMenu"
             android:exported="false" />
         <activity
@@ -25,7 +31,7 @@
             android:name=".Repairer"
             android:exported="false" />
         <activity
-            android:name=".Operator"
+            android:name=".OperatorAsign"
             android:exported="false" />
         <activity
             android:name=".ToolCorrespondentMenu"
