@@ -109,12 +109,16 @@ public class OperatorAssign extends AppCompatActivity {
                         for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                             Task task = snapshot.getValue(Task.class);
                             if (Objects.equals(snapshot.getKey(), tasks_list.getSelectedItem().toString())) {
-                                itemE.setText(task.getItemName());
-                                dateE.setText(task.getDate());
-                                locationE.setText(task.getLocation());
-                                instructionE.setText(task.getInstruction());
-                                statusE.setText(task.getStatus());
-                                emergencyE.setText(String.valueOf(task.isEmergency()));
+                                itemE.setText("Task name: " + task.getItemName());
+                                dateE.setText("Task date: " + task.getDate());
+                                locationE.setText("Task location: " + task.getLocation());
+                                instructionE.setText("Task instruction: " + task.getInstruction());
+                                statusE.setText("Task status: " + task.getStatus());
+                                if(String.valueOf(task.isEmergency()).equals(false)){
+                                    emergencyE.setText("Not an emergency");
+                                } else {
+                                    emergencyE.setText("Emergency");
+                                }
                                 break;
                             }
                         }

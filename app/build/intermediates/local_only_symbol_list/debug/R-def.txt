@@ -57,14 +57,8 @@ id taskLocation
 id taskName
 id tasks_list
 id textView
-id textView10
-id textView11
-id textView12
-id textView13
 id textView2
 id textView4
-id textView5
-id textView6
 id textView7
 id textView8
 id textView9

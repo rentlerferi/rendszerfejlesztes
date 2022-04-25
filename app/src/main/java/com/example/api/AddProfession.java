@@ -27,6 +27,7 @@ public class AddProfession extends AppCompatActivity {
     EditText userID, knowledge;
     Button add, delete;
 
+    User user;
     String id, profession;
     int iterable;
     ArrayList<String> profList;
@@ -55,20 +56,24 @@ public class AddProfession extends AppCompatActivity {
                 ref1.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot1) {
-                        //categoryItems.clear();
                         for(DataSnapshot snapshot : dataSnapshot1.getChildren()){
                             if(Objects.equals(snapshot.getKey(), id)){
+                                user = snapshot.getValue(User.class);
                                 profRef = FirebaseDatabase.getInstance("https://rendszerfejlesztes-3b7df-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Users").child(id).child("profession");
                                 profRef.addValueEventListener(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(@NonNull DataSnapshot dataSnapshot2) {
-                                        //categoryItems.clear();
-                                        //iterable = 0;
-                                        for(DataSnapshot snapshot : dataSnapshot2.getChildren()){
-                                            //if(!Objects.equals(snapshot.getKey(), profession)){
-                                                profRef.child(String.valueOf(snapshot.getChildrenCount() + 1)).setValue(profession);
-                                                break;
-                                            //}
+                                        iterable = 0;
+                                        for(int i = 0; i < dataSnapshot2.getChildrenCount() - 1; i++){
+
+                                            Log.d("profession", user.getProfession().get(i));
+                                            if(!user.getProfession().get(i)
+                                                    .equals(profession)) {
+                                                profRef.child(String.valueOf(dataSnapshot2.getChildrenCount() + 1)).setValue(profession);
+                                                iterable = 0;
+                                                //break;
+                                            }
+                                            iterable++;
                                         }
                                     }
 
@@ -77,6 +82,7 @@ public class AddProfession extends AppCompatActivity {
                                         Log.w("TAG", "loadPost:onCancelled", error.toException());
                                     }
                                 });
+                                break;
                             }
                         }
                     }
