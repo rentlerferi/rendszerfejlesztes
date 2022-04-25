@@ -105,38 +105,28 @@ public class AddProfession extends AppCompatActivity {
                                 profRef.addListenerForSingleValueEvent(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                        //iterable = 0;
-                                        Log.d("profList1", profList.toString());
-                                        for(int i = 0; i < dataSnapshot.getChildrenCount() - 1; i++){
-                                            //profList = snapshot.getValue(User.class).getProfession();
-                                            if(Objects.equals(profList.get(i), profession)){
+                                        for(int i = 0; i < dataSnapshot.getChildrenCount() - 1; i++) {
+                                            if (Objects.equals(profList.get(i), profession)) {
                                                 profRef.child(String.valueOf(i)).removeValue();
-
                                             }
-
-
-                                            //iterable++;
                                         }
-
                                     }
-
                                     @Override
                                     public void onCancelled(@NonNull DatabaseError error) {
                                         Log.w("TAG", "loadPost:onCancelled", error.toException());
                                     }
                                 });
-
-
-                                resetList = user.getProfession();
-                                Log.d("profList2", resetList.toString());
-                                /*for(int j = 0; j < resetList.size() - 1; j++){
-                                    if(resetList.get(j).equals("")){
-                                        resetList.remove(j);
+                                resetList = new ArrayList<>();
+                                for(String item : profList){
+                                    if(item != null){
+                                        resetList.add(item);
                                     }
-                                }*/
+                                }
+                                Log.d("profList2", resetList.toString());
                                 //if(!resetList.equals(profList)){
-                                    ref2.child(id).child("profession").setValue(resetList);
-                                //}
+                                ref2.child(id).child("profession").setValue(resetList);
+
+
                             }
                         }
                     }
