@@ -30,7 +30,7 @@ public class AddProfession extends AppCompatActivity {
     User user;
     String id, profession;
     int iterable;
-    ArrayList<String> profList;
+    ArrayList<String> profList, resetList;
 
     DatabaseReference ref1, ref2, profRef;
 
@@ -53,29 +53,22 @@ public class AddProfession extends AppCompatActivity {
             public void onClick(View view) {
                 id = userID.getText().toString();
                 profession = knowledge.getText().toString();
-                ref1.addValueEventListener(new ValueEventListener() {
+                ref1.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot1) {
                         for(DataSnapshot snapshot : dataSnapshot1.getChildren()){
                             if(Objects.equals(snapshot.getKey(), id)){
                                 user = snapshot.getValue(User.class);
                                 profRef = FirebaseDatabase.getInstance("https://rendszerfejlesztes-3b7df-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Users").child(id).child("profession");
-                                profRef.addValueEventListener(new ValueEventListener() {
+                                //profRef.addListenerForSingleValueEvent(new);
+                                profRef.addListenerForSingleValueEvent(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(@NonNull DataSnapshot dataSnapshot2) {
-                                        iterable = 0;
-                                        for(int i = 0; i < dataSnapshot2.getChildrenCount() - 1; i++){
-
-                                            Log.d("profession", user.getProfession().get(i));
-                                            if(!user.getProfession().get(i)
-                                                    .equals(profession)) {
-                                                profRef.child(String.valueOf(dataSnapshot2.getChildrenCount() + 1)).setValue(profession);
-                                                iterable = 0;
-                                                //break;
-                                            }
-                                            iterable++;
-                                        }
+                                            profRef.child(String.valueOf(dataSnapshot2.getChildrenCount())).setValue(profession);
                                     }
+
+
+
 
                                     @Override
                                     public void onCancelled(@NonNull DatabaseError error) {
@@ -106,19 +99,25 @@ public class AddProfession extends AppCompatActivity {
                         //categoryItems.clear();
                         for(DataSnapshot snapshot : dataSnapshot.getChildren()) {
                             if (Objects.equals(snapshot.getKey(), id)) {
+                                user = snapshot.getValue(User.class);
+                                profList = user.getProfession();
                                 profRef = FirebaseDatabase.getInstance("https://rendszerfejlesztes-3b7df-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Users").child(id).child("profession");
-                                profRef.addValueEventListener(new ValueEventListener() {
+                                profRef.addListenerForSingleValueEvent(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                        iterable = 0;
-                                        for(DataSnapshot snapshot : dataSnapshot.getChildren()){
-                                            iterable++;
-                                            profList = snapshot.getValue(User.class).getProfession();
-                                            if(profList.contains(profession)){
-                                                profRef.child(String.valueOf(iterable)).removeValue();
-                                                break;
+                                        //iterable = 0;
+                                        Log.d("profList1", profList.toString());
+                                        for(int i = 0; i < dataSnapshot.getChildrenCount() - 1; i++){
+                                            //profList = snapshot.getValue(User.class).getProfession();
+                                            if(Objects.equals(profList.get(i), profession)){
+                                                profRef.child(String.valueOf(i)).removeValue();
+
                                             }
+
+
+                                            //iterable++;
                                         }
+
                                     }
 
                                     @Override
@@ -126,6 +125,18 @@ public class AddProfession extends AppCompatActivity {
                                         Log.w("TAG", "loadPost:onCancelled", error.toException());
                                     }
                                 });
+
+
+                                resetList = user.getProfession();
+                                Log.d("profList2", resetList.toString());
+                                /*for(int j = 0; j < resetList.size() - 1; j++){
+                                    if(resetList.get(j).equals("")){
+                                        resetList.remove(j);
+                                    }
+                                }*/
+                                //if(!resetList.equals(profList)){
+                                    ref2.child(id).child("profession").setValue(resetList);
+                                //}
                             }
                         }
                     }
