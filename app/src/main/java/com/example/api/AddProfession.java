@@ -4,12 +4,15 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.Spinner;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -20,122 +23,110 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Objects;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 public class AddProfession extends AppCompatActivity {
 
-    EditText userID, knowledge;
+    EditText knowledge;
     Button add, delete;
+    Spinner usersSpinner, professionSpinner;
 
     User user;
-    String id, profession;
-    int iterable;
-    ArrayList<String> profList, resetList;
+    String profession;
 
-    DatabaseReference ref1, ref2, profRef;
+    ArrayList<String> userIDs = new ArrayList<>();
+    ArrayList<String> userProfessions = new ArrayList<>();
+
+    ArrayAdapter<String> userAdapter, profAdapter;
+
+    DatabaseReference ref, userRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_profession);
 
-        userID = findViewById(R.id.userID);
+        usersSpinner = findViewById(R.id.usersSpinner);
+        professionSpinner = findViewById(R.id.professionSpinner);
         knowledge = findViewById(R.id.knowledge);
         add = findViewById(R.id.addProfession);
         delete = findViewById(R.id.delProfession);
 
-        ref1 = FirebaseDatabase.getInstance("https://rendszerfejlesztes-3b7df-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Users");
-        ref2 = FirebaseDatabase.getInstance("https://rendszerfejlesztes-3b7df-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Users");
+        ref = FirebaseDatabase.getInstance(getResources().getString(R.string.database_url)).getReference("Users");
 
+        userAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, userIDs);
+        profAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, userProfessions);
+        usersSpinner.setAdapter(userAdapter);
+        professionSpinner.setAdapter(profAdapter);
 
-        add.setOnClickListener(new View.OnClickListener() {
+        ref.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onClick(View view) {
-                id = userID.getText().toString();
-                profession = knowledge.getText().toString();
-                ref1.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot1) {
-                        for(DataSnapshot snapshot : dataSnapshot1.getChildren()){
-                            if(Objects.equals(snapshot.getKey(), id)){
-                                user = snapshot.getValue(User.class);
-                                profRef = FirebaseDatabase.getInstance("https://rendszerfejlesztes-3b7df-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Users").child(id).child("profession");
-                                //profRef.addListenerForSingleValueEvent(new);
-                                profRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                                    @Override
-                                    public void onDataChange(@NonNull DataSnapshot dataSnapshot2) {
-                                            profRef.child(String.valueOf(dataSnapshot2.getChildrenCount())).setValue(profession);
-                                    }
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                userIDs.clear();
+                for (DataSnapshot item: snapshot.getChildren()) {
+                    userIDs.add(item.getKey());
+                }
+                userAdapter.notifyDataSetChanged();
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
-
-
-                                    @Override
-                                    public void onCancelled(@NonNull DatabaseError error) {
-                                        Log.w("TAG", "loadPost:onCancelled", error.toException());
-                                    }
-                                });
-                                break;
-                            }
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-                        Log.w("TAG", "loadPost:onCancelled", error.toException());
-                    }
-                });
             }
         });
 
-        delete.setOnClickListener(new View.OnClickListener() {
+        usersSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onClick(View view) {
-                id = userID.getText().toString();
-                profession = knowledge.getText().toString();
-                ref2.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        //categoryItems.clear();
-                        for(DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                            if (Objects.equals(snapshot.getKey(), id)) {
-                                user = snapshot.getValue(User.class);
-                                profList = user.getProfession();
-                                profRef = FirebaseDatabase.getInstance("https://rendszerfejlesztes-3b7df-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Users").child(id).child("profession");
-                                profRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                                    @Override
-                                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                        for(int i = 0; i < dataSnapshot.getChildrenCount() - 1; i++) {
-                                            if (Objects.equals(profList.get(i), profession)) {
-                                                profRef.child(String.valueOf(i)).removeValue();
-                                            }
-                                        }
-                                    }
-                                    @Override
-                                    public void onCancelled(@NonNull DatabaseError error) {
-                                        Log.w("TAG", "loadPost:onCancelled", error.toException());
-                                    }
-                                });
-                                resetList = new ArrayList<>();
-                                for(String item : profList){
-                                    if(item != null){
-                                        resetList.add(item);
-                                    }
-                                }
-                                Log.d("profList2", resetList.toString());
-                                //if(!resetList.equals(profList)){
-                                ref2.child(id).child("profession").setValue(resetList);
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String id = usersSpinner.getSelectedItem().toString();
+                userRef = ref.child(id);
+                updateProfessions();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
 
-                            }
-                        }
-                    }
+        add.setOnClickListener(view -> {
+            profession = knowledge.getText().toString();
+            if (userProfessions.contains(profession)) return;
+            user.addProfession(profession);
+            userRef.setValue(user);
+            updateProfessions();
+        });
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-                        Log.w("TAG", "loadPost:onCancelled", error.toException());
-                    }
-                });
+        delete.setOnClickListener(view -> {
+            profession = professionSpinner.getSelectedItem().toString();
+            user.removeProfession(profession);
+            userRef.setValue(user);
+            updateProfessions();
+        });
+    }
+
+    private void updateProfessions(){
+        userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @SuppressLint("NewApi")
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                user = snapshot.getValue(User.class);
+                userProfessions.clear();
+                userProfessions.addAll(user.getProfession());
+                profAdapter.notifyDataSetChanged();
+
+                if (userProfessions.isEmpty()){
+                    professionSpinner.setEnabled(false);
+                    delete.setEnabled(false);
+                }
+                else {
+                    professionSpinner.setEnabled(true);
+                    delete.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
             }
         });
     }

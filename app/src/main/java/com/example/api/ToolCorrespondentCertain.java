@@ -24,7 +24,7 @@ import java.util.HashMap;
 public class ToolCorrespondentCertain extends AppCompatActivity {
 
     Button addTool;
-    EditText toolName, toolId, toolLocation, toolDescription, taskInstruction;
+    EditText toolName, toolLocation, toolDescription, taskInstruction;
     Spinner toolCategory;
     HashMap<String,Category>  categories = new HashMap<>();
     ArrayList<String> categoryNames = new ArrayList<>();
@@ -43,7 +43,6 @@ public class ToolCorrespondentCertain extends AppCompatActivity {
         toolCategory = findViewById(R.id.toolCategory);
         addTool = findViewById(R.id.addTool);
         toolName = findViewById(R.id.toolName);
-        //toolId = findViewById(R.id.toolId);
         toolLocation = findViewById(R.id.toolLocation);
         toolDescription = findViewById(R.id.toolDescription);
         taskInstruction = findViewById(R.id.taskInstruction);
@@ -82,7 +81,7 @@ public class ToolCorrespondentCertain extends AppCompatActivity {
                 task_instruction = taskInstruction.getText().toString();
 
                 Tool tool = new Tool(tool_name, tool_location, tool_description);
-                Task task = new Task(tool_name, tool_location, task_instruction, getTime(categories.get(tool_category).getInterval()), categories.get(tool_category).getInterval(),"Unassigned");
+                Task task = new Task(tool_name, tool_location, task_instruction, getTime(categories.get(tool_category).getInterval()), "Unassigned", categories.get(tool_category).getInterval());
 
                 DatabaseReference toolRef = ref.child("Tool Categories").child(tool_category).child("Tools");
                 DatabaseReference taskRef = ref.child("Tasks").child(tool_name);

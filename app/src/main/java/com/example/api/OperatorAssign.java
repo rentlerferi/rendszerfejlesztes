@@ -4,12 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -20,16 +18,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class OperatorAssign extends AppCompatActivity {
 
-    Spinner repairers_list,tasks_list;
-    Button assignBt, unassignBt;
+    Spinner repairerSpinner, taskSpinner;
+    Button assignBt;
     ArrayList<String> repairer_array_list,task_array_list;
 
     TextView itemE, dateE, locationE, instructionE, statusE, emergencyE;
-    String item, date, location, instruction, status, emergency;
 
     FirebaseDatabase fb;
     DatabaseReference rep_ref,task_ref;
@@ -39,10 +35,9 @@ public class OperatorAssign extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_operator_assign);
 
-        repairers_list=findViewById(R.id.repairer_list);
-        tasks_list=findViewById(R.id.tasks_list);
+        repairerSpinner =findViewById(R.id.repairerSpinner);
+        taskSpinner=findViewById(R.id.taskSpinner);
         assignBt =findViewById(R.id.assignBtn);
-        unassignBt =findViewById(R.id.unassignBtn);
         itemE = findViewById(R.id.itemName);
         dateE = findViewById(R.id.itemDate);
         locationE = findViewById(R.id.itemLocation);
@@ -52,8 +47,8 @@ public class OperatorAssign extends AppCompatActivity {
 
         fb= FirebaseDatabase.getInstance(getResources().getString(R.string.database_url));
 
-        rep_ref=fb.getReference("Users");
-        task_ref=fb.getReference("Tasks");
+        rep_ref = fb.getReference("Users");
+        task_ref = fb.getReference("Tasks");
 
         repairer_array_list = new ArrayList<>();
         task_array_list = new ArrayList<>();
@@ -61,8 +56,8 @@ public class OperatorAssign extends AppCompatActivity {
         ArrayAdapter<String> rep_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, repairer_array_list);
         ArrayAdapter<String> tas_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, task_array_list);
 
-        tasks_list.setAdapter(tas_adapter);
-        repairers_list.setAdapter(rep_adapter);
+        taskSpinner.setAdapter(tas_adapter);
+        repairerSpinner.setAdapter(rep_adapter);
 
         rep_ref.addValueEventListener(new ValueEventListener() {
             @Override
@@ -82,58 +77,74 @@ public class OperatorAssign extends AppCompatActivity {
             }
         });
 
-        // task list feltöltés
-
         task_ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 task_array_list.clear();
                 for (DataSnapshot item: snapshot.getChildren()) {
-                    task_array_list.add(item.getKey());
+                    Task task = item.getValue(Task.class);
+                    if(task.status.equals("Unassigned"))
+                        task_array_list.add(item.getKey());
                 }
                 tas_adapter.notifyDataSetChanged();
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.w("TAG", "loadPost:onCancelled", error.toException());
-            }
+            public void onCancelled(@NonNull DatabaseError error) {}
         });
 
-        tasks_list.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        taskSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                task_ref.addValueEventListener(new ValueEventListener() {
+                taskSpinner.setEnabled(true);
+                assignBt.setEnabled(true);
+
+                task_ref.child(taskSpinner.getSelectedItem().toString()).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                            Task task = snapshot.getValue(Task.class);
-                            if (Objects.equals(snapshot.getKey(), tasks_list.getSelectedItem().toString())) {
-                                itemE.setText("Task name: " + task.getItemName());
-                                dateE.setText("Task date: " + task.getDate());
-                                locationE.setText("Task location: " + task.getLocation());
-                                instructionE.setText("Task instruction: " + task.getInstruction());
-                                statusE.setText("Task status: " + task.getStatus());
-                                if(String.valueOf(task.isEmergency()).equals(false)){
-                                    emergencyE.setText("Not an emergency");
-                                } else {
-                                    emergencyE.setText("Emergency");
-                                }
-                                break;
-                            }
-                        }
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        Task task = snapshot.getValue(Task.class);
+                        itemE.setText("Task name: " + task.getItemName());
+                        dateE.setText("Task date: " + task.getDate());
+                        locationE.setText("Task location: " + task.getLocation());
+                        instructionE.setText("Task instruction: " + task.getInstruction());
+                        statusE.setText("Task status: " + task.getStatus());
+                        String emergencyStr = (task.isEmergency) ? "Emergency" :"Not an emergency";
+                        emergencyE.setText(emergencyStr);
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-                        Log.w("TAG", "loadPost:onCancelled", error.toException());
+
                     }
                 });
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
+                taskSpinner.setEnabled(false);
+                assignBt.setEnabled(false);
             }
+        });
+
+        assignBt.setOnClickListener(task -> {
+            String selectedUser = repairerSpinner.getSelectedItem().toString();
+            String selectedTask = taskSpinner.getSelectedItem().toString();
+
+            task_ref.child(selectedTask).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    Task t = snapshot.getValue(Task.class);
+                    t.repairerID = selectedUser;
+                    t.status = "Assigned";
+                    task_ref.child(selectedTask).setValue(t);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
         });
     }
 }

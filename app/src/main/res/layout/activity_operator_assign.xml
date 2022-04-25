@@ -18,7 +18,7 @@
         android:text="Tasks" />
 
     <Spinner
-        android:id="@+id/tasks_list"
+        android:id="@+id/taskSpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="48dp"
@@ -91,7 +91,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="22dp" />
+        android:layout_height="65dp" />
 
     <TextView
         android:id="@+id/textView8"
@@ -100,7 +100,7 @@
         android:text="Repairers" />
 
     <Spinner
-        android:id="@+id/repairer_list"
+        android:id="@+id/repairerSpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="48dp"
@@ -108,7 +108,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="175dp" />
+        android:layout_height="15dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -122,12 +122,6 @@
             android:layout_weight="1"
             android:text="Assign" />
 
-        <Button
-            android:id="@+id/unassignBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Unassign" />
     </LinearLayout>
 
 </LinearLayout>
