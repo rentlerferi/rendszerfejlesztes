@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class User {
     private String role;
     private String name;
-    private ArrayList<String> profession;
+    private ArrayList<String> profession = new ArrayList<>();
 
     public User() {
     }
@@ -48,4 +48,8 @@ public class User {
     public void setProfession(ArrayList<String> profession) {
         this.profession = profession;
     }
+
+    public void addProfession(String prof) { profession.add(prof); }
+
+    public void removeProfession(String prof) { profession.remove(prof); }
 }

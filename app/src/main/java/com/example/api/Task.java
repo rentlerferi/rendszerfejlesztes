@@ -12,6 +12,70 @@ public class Task {
     public String repairerID="";
     public String interval;
 
+    public String getItemName() {
+        return itemName;
+    }
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getInstruction() {
+        return instruction;
+    }
+
+    public void setInstruction(String instruction) {
+        this.instruction = instruction;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public boolean isEmergency() {
+        return isEmergency;
+    }
+
+    public void setEmergency(boolean emergency) {
+        isEmergency = emergency;
+    }
+
+    public String getRepairerID() {
+        return repairerID;
+    }
+
+    public void setRepairerID(String repairerID) {
+        this.repairerID = repairerID;
+    }
+
+    public String getInterval() {
+        return interval;
+    }
+
+    public void setInterval(String interval) {
+        this.interval = interval;
+    }
+
     public Task(){
     }
 

@@ -15,7 +15,7 @@
         android:id="@+id/Bt1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Asign" />
+        android:text="Assign" />
 
     <Space
         android:layout_width="match_parent"
@@ -25,5 +25,5 @@
         android:id="@+id/Bt2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Emargency task" />
+        android:text="Emergency task" />
 </LinearLayout>
