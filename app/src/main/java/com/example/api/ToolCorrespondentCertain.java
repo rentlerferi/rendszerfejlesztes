@@ -24,11 +24,10 @@ import java.util.HashMap;
 public class ToolCorrespondentCertain extends AppCompatActivity {
 
     Button addTool;
-    EditText toolName, toolId, toolLocation, toolDescription, taskInstruction;
+    EditText toolName, toolLocation, toolDescription, taskInstruction;
     Spinner toolCategory;
     HashMap<String,Category>  categories = new HashMap<>();
     ArrayList<String> categoryNames = new ArrayList<>();
-
 
     String tool_name, tool_location, tool_category, tool_description, task_instruction;
 
@@ -43,12 +42,10 @@ public class ToolCorrespondentCertain extends AppCompatActivity {
         toolCategory = findViewById(R.id.toolCategory);
         addTool = findViewById(R.id.addTool);
         toolName = findViewById(R.id.toolName);
-        toolId = findViewById(R.id.toolId);
         toolLocation = findViewById(R.id.toolLocation);
         toolDescription = findViewById(R.id.toolDescription);
         taskInstruction = findViewById(R.id.taskInstruction);
         ref = FirebaseDatabase.getInstance(getResources().getString(R.string.database_url)).getReference();
-
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, categoryNames);
         toolCategory.setAdapter(adapter);
@@ -74,7 +71,6 @@ public class ToolCorrespondentCertain extends AppCompatActivity {
 
         addTool.setOnClickListener(view -> {
             if (!toolName.getText().toString().equals("") &&
-                    !toolId.getText().toString().equals("") &&
                     !toolLocation.getText().toString().equals("")) {
                 tool_name = toolName.getText().toString();
                 tool_location = toolLocation.getText().toString();
@@ -82,8 +78,8 @@ public class ToolCorrespondentCertain extends AppCompatActivity {
                 tool_description = toolDescription.getText().toString();
                 task_instruction = taskInstruction.getText().toString();
 
-                Tool tool = new Tool(tool_name, tool_location, tool_description);
-                Task task = new Task(tool_name, tool_location, task_instruction, getTime(categories.get(tool_category).getInterval()), categories.get(tool_category).getInterval(),"Unassigned");
+                Tool tool = new Tool(tool_name, tool_location, tool_category, tool_description);
+                Task task = new Task(tool_name, tool_location, task_instruction, getTime(categories.get(tool_category).interval), "Unassigned", categories.get(tool_category).interval);
 
                 DatabaseReference toolRef = ref.child("Tool Categories").child(tool_category).child("Tools");
                 DatabaseReference taskRef = ref.child("Tasks").child(tool_name);

@@ -124,33 +124,32 @@ public class Repairer extends AppCompatActivity {
             }
         });
 
-        toDoTasks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Pair<String, Task> t = new Pair<>((String)toDoTasks.getItemAtPosition(i), tasks.get((String)toDoTasks.getItemAtPosition(i)));
+        toDoTasks.setOnItemClickListener((adapterView, view, i, l) -> {
+            Pair<String, Task> t = new Pair<>((String)toDoTasks.getItemAtPosition(i), tasks.get((String)toDoTasks.getItemAtPosition(i)));
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(Repairer.this);
-                builder.setTitle(t.first);
-                String sIsEmergency = (t.second.isEmergency) ? "Emergency" : "Not Emergency";
-                builder.setMessage(String.format("Task Name: %s\nTask Location: %s\nTask Instruction: %s\nTask Date: %s\n%s",
-                        t.second.itemName, t.second.location, t.second.instruction, t.second.date, sIsEmergency));
-                builder.setCancelable(true);
+            AlertDialog.Builder builder = new AlertDialog.Builder(Repairer.this);
+            builder.setTitle(t.first);
+            String sIsEmergency = (t.second.isEmergency) ? "Emergency" : "Not Emergency";
+            builder.setMessage(String.format("Task Name: %s\nTask Location: %s\nTask Instruction: %s\nTask Date: %s\n%s",
+                    t.second.itemName, t.second.location, t.second.instruction, t.second.date, sIsEmergency));
+            builder.setCancelable(true);
 
-                builder.setPositiveButton(
-                        "Task Done",
-                        (dialog, id) -> {
-                            DatabaseReference statusRef = tasksRef.child(t.first).child("status");
-                            statusRef.setValue("Done");
-                            dialog.cancel();
-                        });
+            builder.setPositiveButton(
+                    "Task Done",
+                    (dialog, id) -> {
+                        DatabaseReference statusRef = tasksRef.child(t.first).child("status");
+                        DatabaseReference emergencyRef = tasksRef.child(t.first).child("isEmergency");
+                        statusRef.setValue("Done");
+                        emergencyRef.setValue(false);
+                        dialog.cancel();
+                    });
 
-                builder.setNegativeButton(
-                        "Cancel",
-                        (dialog, id) -> dialog.cancel());
+            builder.setNegativeButton(
+                    "Cancel",
+                    (dialog, id) -> dialog.cancel());
 
-                AlertDialog alert11 = builder.create();
-                alert11.show();
-            }
+            AlertDialog alert11 = builder.create();
+            alert11.show();
         });
     }
 
