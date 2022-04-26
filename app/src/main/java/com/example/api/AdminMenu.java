@@ -19,22 +19,16 @@ public class AdminMenu extends AppCompatActivity {
         newUser = findViewById(R.id.addUser);
         addProfession = findViewById(R.id.addProfession);
 
-        newUser.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent();
-                i.setClass(AdminMenu.this, Admin.class);
-                startActivity(i);
-            }
+        newUser.setOnClickListener(view -> {
+            Intent i = new Intent();
+            i.setClass(AdminMenu.this, Admin.class);
+            startActivity(i);
         });
 
-        addProfession.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent();
-                i.setClass(AdminMenu.this, AddProfession.class);
-                startActivity(i);
-            }
+        addProfession.setOnClickListener(view -> {
+            Intent i = new Intent();
+            i.setClass(AdminMenu.this, AddProfession.class);
+            startActivity(i);
         });
     }
 }

@@ -73,9 +73,9 @@ public class ToolCorrespondentCategory extends AppCompatActivity {
                         for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                             Category category = snapshot.getValue(Category.class);
                             if (snapshot.getKey().equals(charSequence.toString())) {
-                                instruction.setHint(category.getInstructions());
-                                norma.setHint(String.valueOf(category.getNorma()));
-                                intervalDropdown.setSelection(intervals.indexOf(category.getInterval()));
+                                instruction.setHint(category.instructions);
+                                norma.setHint(String.valueOf(category.norma));
+                                intervalDropdown.setSelection(intervals.indexOf(category.interval));
                                 break;
                             }
                             else {

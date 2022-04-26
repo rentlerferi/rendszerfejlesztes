@@ -63,7 +63,7 @@ public class EmergencyTasks extends AppCompatActivity {
         list.setAdapter(tool_adapter);
         HashMap<String, Tool> tools_hess  = new HashMap<>();
 
-        HashMap<String, String> fcingthing  = new HashMap<>();
+        HashMap<String, String> categoryIntervals  = new HashMap<>();
 
         tool_ref.addValueEventListener(new ValueEventListener() {
             @Override
@@ -72,7 +72,7 @@ public class EmergencyTasks extends AppCompatActivity {
                 tools_hess.clear();
                 for (DataSnapshot item : snapshot.getChildren()) {
                     DatabaseReference temp = tool_ref.child(item.getKey()).child("Tools");
-                    fcingthing.put(item.getKey(), item.getValue(Category.class).getInterval());
+                    categoryIntervals.put(item.getKey(), item.getValue(Category.class).interval);
                     temp.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot1) {
@@ -106,7 +106,7 @@ public class EmergencyTasks extends AppCompatActivity {
 
                 idx= list.getItemAtPosition(i).toString();
 
-                location.setText("Location ->  " + tools_hess.get(idx).getLocation());
+                location.setText("Location ->  " + tools_hess.get(idx).location);
 
             }
 
@@ -130,8 +130,8 @@ public class EmergencyTasks extends AppCompatActivity {
 
         BuTtOn1.setOnClickListener(view -> {
             Tool aTool = tools_hess.get(idx);
-            Task task = new Task(aTool.getName(), aTool.getLocation(), instructions.getText().toString(), date_date, fcingthing.get(aTool.getCategory()),true);
-            task_ref.child(aTool.getName()).setValue(task);
+            Task task = new Task(aTool.name, aTool.location, instructions.getText().toString(), date_date, categoryIntervals.get(aTool.category),true);
+            task_ref.child(aTool.name).setValue(task);
             
         });
 
