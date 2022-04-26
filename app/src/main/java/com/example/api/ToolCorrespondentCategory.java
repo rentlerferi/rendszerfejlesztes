@@ -73,9 +73,9 @@ public class ToolCorrespondentCategory extends AppCompatActivity {
                         for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                             Category category = snapshot.getValue(Category.class);
                             if (snapshot.getKey().equals(charSequence.toString())) {
-                                instruction.setHint(category.getInstructions());
-                                norma.setHint(String.valueOf(category.getNorma()));
-                                intervalDropdown.setSelection(intervals.indexOf(category.getInterval()));
+                                instruction.setHint(category.instructions);
+                                norma.setHint(String.valueOf(category.norma));
+                                intervalDropdown.setSelection(intervals.indexOf(category.interval));
                                 break;
                             }
                             else {
@@ -107,8 +107,12 @@ public class ToolCorrespondentCategory extends AppCompatActivity {
                 cInterval = intervalDropdown.getSelectedItem().toString();
                 cNorma = Integer.parseInt(norma.getText().toString());
 
-                Category category = new Category(cInterval, cInstructions, cNorma);
-                ref.child(categoryName).setValue(category);
+                ref.child(categoryName).child("instructions").setValue(cInstructions);
+                ref.child(categoryName).child("interval").setValue(cInterval);
+                ref.child(categoryName).child("norma").setValue(cNorma);
+
+//                Category category = new Category(cInterval, cInstructions, cNorma);
+//                ref.child(categoryName).setValue(category);
                 finish();
             } else {
                 Toast.makeText(ToolCorrespondentCategory.this, "Fill all the required fields!", Toast.LENGTH_SHORT).show();

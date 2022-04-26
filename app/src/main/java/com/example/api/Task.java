@@ -1,7 +1,5 @@
 package com.example.api;
 
-import java.util.Date;
-
 public class Task {
     public String itemName;
     public String location;

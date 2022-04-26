@@ -72,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     User user = snapshot.getValue(User.class);
 
-                    switch (user.getRole()) {
+                    switch (user.role) {
                         case "Admin":
                             Intent a = new Intent(LoginActivity.this, AdminMenu.class);
                             startActivity(a);
