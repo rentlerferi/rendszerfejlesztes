@@ -29,7 +29,6 @@ public class ToolCorrespondentCertain extends AppCompatActivity {
     HashMap<String,Category>  categories = new HashMap<>();
     ArrayList<String> categoryNames = new ArrayList<>();
 
-
     String tool_name, tool_location, tool_category, tool_description, task_instruction;
 
     DatabaseReference ref;
@@ -47,7 +46,6 @@ public class ToolCorrespondentCertain extends AppCompatActivity {
         toolDescription = findViewById(R.id.toolDescription);
         taskInstruction = findViewById(R.id.taskInstruction);
         ref = FirebaseDatabase.getInstance(getResources().getString(R.string.database_url)).getReference();
-
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, categoryNames);
         toolCategory.setAdapter(adapter);
@@ -80,8 +78,8 @@ public class ToolCorrespondentCertain extends AppCompatActivity {
                 tool_description = toolDescription.getText().toString();
                 task_instruction = taskInstruction.getText().toString();
 
-                Tool tool = new Tool(tool_name, tool_location, tool_description);
-                Task task = new Task(tool_name, tool_location, task_instruction, getTime(categories.get(tool_category).getInterval()), "Unassigned", categories.get(tool_category).getInterval());
+                Tool tool = new Tool(tool_name, tool_location, tool_category, tool_description);
+                Task task = new Task(tool_name, tool_location, task_instruction, getTime(categories.get(tool_category).interval), "Unassigned", categories.get(tool_category).interval);
 
                 DatabaseReference toolRef = ref.child("Tool Categories").child(tool_category).child("Tools");
                 DatabaseReference taskRef = ref.child("Tasks").child(tool_name);

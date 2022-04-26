@@ -65,7 +65,7 @@ public class OperatorAssign extends AppCompatActivity {
                 repairer_array_list.clear();
                 for (DataSnapshot item: snapshot.getChildren()) {
                     User user = item.getValue(User.class);
-                    if(user.getRole().equals("Repairer"))
+                    if(user.role.equals("Repairer"))
                         repairer_array_list.add(item.getKey());
                 }
                 rep_adapter.notifyDataSetChanged();
@@ -103,11 +103,11 @@ public class OperatorAssign extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         Task task = snapshot.getValue(Task.class);
-                        itemE.setText("Task name: " + task.getItemName());
-                        dateE.setText("Task date: " + task.getDate());
-                        locationE.setText("Task location: " + task.getLocation());
-                        instructionE.setText("Task instruction: " + task.getInstruction());
-                        statusE.setText("Task status: " + task.getStatus());
+                        itemE.setText("Task name: " + task.itemName);
+                        dateE.setText("Task date: " + task.date);
+                        locationE.setText("Task location: " + task.location);
+                        instructionE.setText("Task instruction: " + task.instruction);
+                        statusE.setText("Task status: " + task.status);
                         String emergencyStr = (task.isEmergency) ? "Emergency" :"Not an emergency";
                         emergencyE.setText(emergencyStr);
                     }

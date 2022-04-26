@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -21,7 +20,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class AddProfession extends AppCompatActivity {
 
@@ -111,7 +109,7 @@ public class AddProfession extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 user = snapshot.getValue(User.class);
                 userProfessions.clear();
-                userProfessions.addAll(user.getProfession());
+                userProfessions.addAll(user.getProfessions());
                 profAdapter.notifyDataSetChanged();
 
                 if (userProfessions.isEmpty()){
