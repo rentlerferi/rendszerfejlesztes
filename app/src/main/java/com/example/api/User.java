@@ -3,17 +3,17 @@ package com.example.api;
 import java.util.ArrayList;
 
 public class User {
-    private String role;
-    private String name;
-    private ArrayList<String> profession;
+    public String role;
+    public String name;
+    private ArrayList<String> professions = new ArrayList<>();
 
     public User() {
     }
 
-    public User(ArrayList<String> profession, String name, String role) {
+    public User(ArrayList<String> professions, String name, String role) {
         this.name = name;
         this.role = role;
-        this.profession = profession;
+        this.professions = professions;
     }
 
     @Override
@@ -21,31 +21,15 @@ public class User {
         return "User{" +
                 ", role='" + role + '\'' +
                 ", name='" + name + '\'' +
-                ", profession=" + profession +
+                ", profession=" + professions +
                 '}';
     }
 
-    public String getRole() {
-        return role;
+    public ArrayList<String> getProfessions() {
+        return professions;
     }
 
-    public void setRole(String role) {
-        this.role = role;
-    }
+    public void addProfession(String prof) { professions.add(prof); }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public ArrayList<String> getProfession() {
-        return profession;
-    }
-
-    public void setProfession(ArrayList<String> profession) {
-        this.profession = profession;
-    }
+    public void removeProfession(String prof) { professions.remove(prof); }
 }
