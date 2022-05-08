@@ -4,13 +4,16 @@ import static com.example.api.Helpers.getTime;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Pair;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
@@ -28,8 +31,11 @@ public class ToolCorrespondentCertain extends AppCompatActivity {
     Spinner toolCategory;
     HashMap<String,Category>  categories = new HashMap<>();
     ArrayList<String> categoryNames = new ArrayList<>();
+    ListView toolList;
 
     String tool_name, tool_location, tool_category, tool_description, task_instruction;
+    HashMap<String,Tool> tools = new HashMap<>();
+    ArrayList<String> toolNames = new ArrayList<>();
 
     DatabaseReference ref;
 
@@ -46,19 +52,41 @@ public class ToolCorrespondentCertain extends AppCompatActivity {
         toolDescription = findViewById(R.id.toolDescription);
         taskInstruction = findViewById(R.id.taskInstruction);
         ref = FirebaseDatabase.getInstance(getResources().getString(R.string.database_url)).getReference();
+        toolList = findViewById(R.id.toolList);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, categoryNames);
         toolCategory.setAdapter(adapter);
+        ArrayAdapter<String> toolsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, toolNames);
+        toolList.setAdapter(toolsAdapter);
 
         ref.child("Tool Categories").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 categories.clear();
                 categoryNames.clear();
+                tools.clear();
+                toolNames.clear();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     Category category = snapshot.getValue(Category.class);
                     categories.put(snapshot.getKey(),category);
                     categoryNames.add(snapshot.getKey());
+                    DatabaseReference toolsRef = ref.child("Tool Categories").child(snapshot.getKey()).child("Tools");
+                    toolsRef.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot toolsSnapshot) {
+                            for(DataSnapshot tool : toolsSnapshot.getChildren()){
+                                Tool t = tool.getValue(Tool.class);
+                                tools.put(t.name,t);
+                                toolNames.add(t.name);
+                            }
+                            toolsAdapter.notifyDataSetChanged();
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
                 }
                 adapter.notifyDataSetChanged();
             }
@@ -89,6 +117,24 @@ public class ToolCorrespondentCertain extends AppCompatActivity {
             } else {
                 Toast.makeText(ToolCorrespondentCertain.this, "Fill all the required fields!", Toast.LENGTH_SHORT).show();
             }
+        });
+        toolList.setOnItemClickListener((adapterView, view, i, l) -> {
+            Pair<String, Tool> t = new Pair<>((String)toolList.getItemAtPosition(i), tools.get((String)toolList.getItemAtPosition(i)));
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(ToolCorrespondentCertain.this);
+            builder.setTitle(t.first);
+            builder.setMessage(String.format("Description: %s\nLocation: %s\n",
+                    t.second.description, t.second.location));
+            builder.setCancelable(false);
+
+            builder.setPositiveButton(
+                    "Ok",
+                    (dialog, id) -> {
+                        dialog.cancel();
+                    });
+
+            AlertDialog alert11 = builder.create();
+            alert11.show();
         });
     }
 }

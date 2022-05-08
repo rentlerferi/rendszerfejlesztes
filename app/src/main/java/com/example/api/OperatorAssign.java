@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -44,6 +45,7 @@ public class OperatorAssign extends AppCompatActivity {
         instructionE = findViewById(R.id.itemInstruction);
         statusE = findViewById(R.id.itemStatus);
         emergencyE = findViewById(R.id.itemEmOrNot);
+
 
         fb= FirebaseDatabase.getInstance(getResources().getString(R.string.database_url));
 

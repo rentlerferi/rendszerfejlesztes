@@ -49,19 +49,12 @@
         app:layout_constraintTop_toBottomOf="@+id/Role"
         app:layout_constraintVertical_bias="0.27" />
 
-    <EditText
-        android:id="@+id/knowledge"
+    <Spinner
+        android:id="@+id/knowledgeSpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:ems="10"
-        android:hint="Knowledge"
-        android:inputType="textPersonName"
         android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ID" />
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/editUser"

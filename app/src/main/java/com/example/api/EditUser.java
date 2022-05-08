@@ -6,11 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.google.firebase.database.DataSnapshot;
@@ -23,19 +23,20 @@ import java.util.ArrayList;
 
 public class EditUser extends AppCompatActivity {
 
-    EditText knowledge;
+
     Button add, delete;
-    Spinner usersSpinner, professionSpinner;
+    Spinner usersSpinner, professionSpinner, knowledgeSpinner;
 
     User user;
     String profession;
 
     ArrayList<String> userIDs = new ArrayList<>();
     ArrayList<String> userProfessions = new ArrayList<>();
+    ArrayList<String> availableProfessions = new ArrayList<>();
 
-    ArrayAdapter<String> userAdapter, profAdapter;
+    ArrayAdapter<String> userAdapter, profAdapter, avaAdapter;
 
-    DatabaseReference ref, userRef;
+    DatabaseReference ref, userRef,usersRef,profRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,18 +45,22 @@ public class EditUser extends AppCompatActivity {
 
         usersSpinner = findViewById(R.id.usersSpinner);
         professionSpinner = findViewById(R.id.professionSpinner);
-        knowledge = findViewById(R.id.knowledge);
+        knowledgeSpinner = findViewById(R.id.knowledgeSpinner);
         add = findViewById(R.id.editUser);
         delete = findViewById(R.id.delProfession);
 
-        ref = FirebaseDatabase.getInstance(getResources().getString(R.string.database_url)).getReference("Users");
+        ref = FirebaseDatabase.getInstance(getResources().getString(R.string.database_url)).getReference();
+        usersRef = ref.child("Users");
+        profRef = ref.child("Professions");
 
         userAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, userIDs);
         profAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, userProfessions);
+        avaAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, availableProfessions);
         usersSpinner.setAdapter(userAdapter);
         professionSpinner.setAdapter(profAdapter);
+        knowledgeSpinner.setAdapter(avaAdapter);
 
-        ref.addValueEventListener(new ValueEventListener() {
+        usersRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 userIDs.clear();
@@ -63,6 +68,7 @@ public class EditUser extends AppCompatActivity {
                     userIDs.add(item.getKey());
                 }
                 userAdapter.notifyDataSetChanged();
+                usersSpinner.setSelection(0);
             }
 
             @Override
@@ -70,13 +76,12 @@ public class EditUser extends AppCompatActivity {
 
             }
         });
-
         usersSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String id = usersSpinner.getSelectedItem().toString();
                 userRef = ref.child(id);
-                updateProfessions();
+                updateUserRef();
             }
 
             @Override
@@ -85,24 +90,43 @@ public class EditUser extends AppCompatActivity {
             }
         });
 
+        profRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                availableProfessions.clear();
+                for(DataSnapshot s : snapshot.getChildren()){
+                    if(user != null && !user.getProfessions().contains(s.getKey())){
+                        availableProfessions.add(s.getKey());
+                    }
+                }
+                avaAdapter.notifyDataSetChanged();
+
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
 
         add.setOnClickListener(view -> {
-            profession = knowledge.getText().toString();
+            profession = knowledgeSpinner.getSelectedItem().toString();
             if (userProfessions.contains(profession)) return;
             user.addProfession(profession);
             userRef.setValue(user);
-            updateProfessions();
+            updateUserRef();
         });
 
         delete.setOnClickListener(view -> {
             profession = professionSpinner.getSelectedItem().toString();
             user.removeProfession(profession);
             userRef.setValue(user);
-            updateProfessions();
+            updateUserRef();
         });
     }
-
-    private void updateProfessions(){
+    private void updateUserRef(){
         userRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @SuppressLint("NewApi")
             @Override
@@ -128,4 +152,5 @@ public class EditUser extends AppCompatActivity {
             }
         });
     }
+
 }
