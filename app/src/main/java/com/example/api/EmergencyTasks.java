@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.EditText;
+import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,7 +34,8 @@ public class EmergencyTasks extends AppCompatActivity {
     Spinner list;
     EditText instructions;
     CalendarView date;
-    TextView location;
+    TextView location, normaTimeTW;
+    SeekBar normaTime;
     ArrayList<String> all_tools;
     Button BuTtOn1;
 
@@ -53,6 +55,8 @@ public class EmergencyTasks extends AppCompatActivity {
         instructions = findViewById(R.id.Instructions);
         date = findViewById(R.id.date);
         location = findViewById(R.id.Location);
+        normaTimeTW = findViewById(R.id.normaTimeTW);
+        normaTime = findViewById(R.id.normaTime);
 
         fb = FirebaseDatabase.getInstance(getResources().getString(R.string.database_url));
         tool_ref = fb.getReference("Tool Categories");
@@ -62,8 +66,24 @@ public class EmergencyTasks extends AppCompatActivity {
         ArrayAdapter<String> tool_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, all_tools);
         list.setAdapter(tool_adapter);
         HashMap<String, Tool> tools_hess  = new HashMap<>();
-
         HashMap<String, String> categoryIntervals  = new HashMap<>();
+
+        normaTime.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                normaTimeTW.setText(String.valueOf(progress + 1) + " Hour(s)");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
 
         tool_ref.addValueEventListener(new ValueEventListener() {
             @Override
@@ -116,21 +136,19 @@ public class EmergencyTasks extends AppCompatActivity {
             }
         });
 
-        date.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            //show the selected date as a toast
-            @Override
-            public void onSelectedDayChange(CalendarView view, int year, int month, int day) {
-                month++;
-                String strMonth = (month < 10) ? String.format("0%d", month) : String.valueOf(month);
-                String strDay = (day < 10) ? String.format("0%d", day) : String.valueOf(day);
-                date_date = String.format("%d-%s-%s", year, strMonth, strDay);
-            }
+        //show the selected date as a toast
+        date.setOnDateChangeListener((view, year, month, day) -> {
+            month++;
+            String strMonth = (month < 10) ? String.format("0%d", month) : String.valueOf(month);
+            String strDay = (day < 10) ? String.format("0%d", day) : String.valueOf(day);
+            date_date = String.format("%d-%s-%s", year, strMonth, strDay);
         });
 
 
         BuTtOn1.setOnClickListener(view -> {
             Tool aTool = tools_hess.get(idx);
             Task task = new Task(aTool.name, aTool.location, instructions.getText().toString(), date_date, categoryIntervals.get(aTool.category),true);
+            task.norma = normaTime.getProgress() + 1;
             task_ref.child(aTool.name).setValue(task);
             
         });

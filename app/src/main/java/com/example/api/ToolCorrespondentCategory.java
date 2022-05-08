@@ -28,7 +28,7 @@ public class ToolCorrespondentCategory extends AppCompatActivity {
     ArrayList<String> intervals;
     Spinner intervalDropdown;
 
-    EditText name, instruction, norma;
+    EditText name, instruction;
     Button addCategory, deleteCategory;
 
     String categoryName, cInstructions, cInterval;
@@ -44,7 +44,6 @@ public class ToolCorrespondentCategory extends AppCompatActivity {
         intervalDropdown = findViewById(R.id.intervalDropdown);
         name = findViewById(R.id.categoryName);
         instruction = findViewById(R.id.instructions);
-        norma = findViewById(R.id.norma);
         addCategory = findViewById(R.id.addCategory);
         deleteCategory = findViewById(R.id.deleteCategory);
 
@@ -67,26 +66,28 @@ public class ToolCorrespondentCategory extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                ref.addValueEventListener(new ValueEventListener() {
+                ref.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                            Category category = snapshot.getValue(Category.class);
-                            if (snapshot.getKey().equals(charSequence.toString())) {
-                                instruction.setHint(category.instructions);
-                                norma.setHint(String.valueOf(category.norma));
-                                intervalDropdown.setSelection(intervals.indexOf(category.interval));
-                                break;
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.hasChild(charSequence.toString())) {
+                            for (DataSnapshot s : snapshot.getChildren()){
+                                if (s.getKey().equals(charSequence.toString())){
+                                    Category category = s.getValue(Category.class);
+                                    instruction.setText(category.instructions);
+                                    intervalDropdown.setSelection(intervals.indexOf(category.interval));
+                                    break;
+                                }
+
                             }
-                            else {
-                                resetValues();
-                            }
+                        }
+                        else {
+                            resetValues();
                         }
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-                        Log.w("TAG", "loadPost:onCancelled", error.toException());
+
                     }
                 });
             }
@@ -99,21 +100,17 @@ public class ToolCorrespondentCategory extends AppCompatActivity {
 
         addCategory.setOnClickListener(view -> {
             if (!name.getText().toString().equals("") &&
-                    !instruction.getText().toString().equals("") &&
-                    !norma.getText().toString().equals("")) {
+                    !instruction.getText().toString().equals("")) {
 
                 categoryName = name.getText().toString();
                 cInstructions = instruction.getText().toString();
                 cInterval = intervalDropdown.getSelectedItem().toString();
-                cNorma = Integer.parseInt(norma.getText().toString());
 
-                ref.child(categoryName).child("instructions").setValue(cInstructions);
-                ref.child(categoryName).child("interval").setValue(cInterval);
-                ref.child(categoryName).child("norma").setValue(cNorma);
+                Category category = new Category(cInterval, cInstructions);
+                ref.child(categoryName).setValue(category);
 
-//                Category category = new Category(cInterval, cInstructions, cNorma);
-//                ref.child(categoryName).setValue(category);
-                finish();
+                resetValues();
+                name.setText("");
             } else {
                 Toast.makeText(ToolCorrespondentCategory.this, "Fill all the required fields!", Toast.LENGTH_SHORT).show();
             }
@@ -128,7 +125,8 @@ public class ToolCorrespondentCategory extends AppCompatActivity {
                         if (!name.getText().toString().equals("")) {
                             categoryName = name.getText().toString();
                             ref.child(categoryName).removeValue();
-                            finish();
+                            resetValues();
+                            name.setText("");
                         } else {
                             Toast.makeText(ToolCorrespondentCategory.this, "Fill the name field!", Toast.LENGTH_SHORT).show();
                         }
@@ -144,9 +142,7 @@ public class ToolCorrespondentCategory extends AppCompatActivity {
     }
 
     private void resetValues(){
-        name.setHint("Name");
-        instruction.setHint("Instructions");
-        norma.setHint("Norma");
+        instruction.setText("");
         intervalDropdown.setSelection(0);
     }
 }

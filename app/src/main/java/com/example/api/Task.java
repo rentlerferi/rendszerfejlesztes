@@ -5,10 +5,11 @@ public class Task {
     public String location;
     public String instruction;
     public String date;
-    public String status = "Unasigned";
+    public String status = "Unassigned";
     public boolean isEmergency = false;
     public String repairerID="";
     public String interval;
+    public int norma = 1;
 
     public Task(){
     }

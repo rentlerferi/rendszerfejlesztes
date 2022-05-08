@@ -24,15 +24,6 @@
         android:inputType="textPersonName"
         tools:ignore="TouchTargetSizeCheck" />
 
-    <EditText
-        android:id="@+id/norma"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Norma"
-        android:inputType="textPersonName"
-        tools:ignore="TouchTargetSizeCheck" />
-
     <Spinner
         android:id="@+id/intervalDropdown"
         android:layout_width="match_parent"

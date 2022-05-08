@@ -2560,10 +2560,6 @@ id CTRL
 id FUNCTION
 id ID
 id Instructions
-id Knw1
-id Knw2
-id Knw3
-id Knw4
 id Location
 id Login
 id Login_auth
@@ -2638,8 +2634,12 @@ id activity_chooser_view_content
 id add
 id addCategory
 id addProfession
+id addProfessionBtn
+id addProfessionButton
+id addProfessionSpinner
 id addTool
 id addUser
+id addedProfessionsSpinner
 id adjust_height
 id adjust_width
 id alertTitle
@@ -2729,6 +2729,7 @@ id decor_content_parent
 id default_activity_button
 id delProfession
 id deleteCategory
+id deleteProfessionButton
 id deltaRelative
 id denyTask
 id dependency_ordering
@@ -2758,6 +2759,7 @@ id easeIn
 id easeInOut
 id easeOut
 id east
+id editUser
 id edit_query
 id elastic
 id end
@@ -2821,11 +2823,12 @@ id itemInstruction
 id itemList
 id itemLocation
 id itemName
+id itemNorma
 id itemStatus
 id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
-id knowledge
+id knowledgeSpinner
 id labeled
 id layout
 id left
@@ -2906,7 +2909,8 @@ id neverCompleteToStart
 id noScroll
 id noState
 id none
-id norma
+id normaTime
+id normaTimeTW
 id normal
 id north
 id notification_background
@@ -2932,6 +2936,9 @@ id percent
 id pin
 id position
 id postLayout
+id professionFilterSpinner
+id professionList
+id professionName
 id professionSpinner
 id progress_circular
 id progress_horizontal
@@ -3038,10 +3045,12 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textView
+id textView12
 id textView2
 id textView3
 id textView4
 id textView5
+id textView6
 id textView7
 id textView8
 id textView9
@@ -3063,6 +3072,7 @@ id toggle
 id toolCategory
 id toolDescription
 id toolGroup
+id toolList
 id toolLocation
 id toolName
 id top
@@ -3094,6 +3104,8 @@ id west
 id wide
 id withText
 id withinBounds
+id workingHours
+id workingHoursTW
 id wrap
 id wrap_content
 id wrap_content_constrained
@@ -3187,8 +3199,9 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_add_profession
-layout activity_admin
+layout activity_add_user
 layout activity_admin_menu
+layout activity_edit_user
 layout activity_emergency_tasks
 layout activity_main
 layout activity_operator_assign
