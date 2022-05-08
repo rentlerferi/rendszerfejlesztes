@@ -68,7 +68,6 @@ public class EditUser extends AppCompatActivity {
                     userIDs.add(item.getKey());
                 }
                 userAdapter.notifyDataSetChanged();
-                usersSpinner.setSelection(0);
             }
 
             @Override
@@ -76,12 +75,13 @@ public class EditUser extends AppCompatActivity {
 
             }
         });
+
         usersSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String id = usersSpinner.getSelectedItem().toString();
-                userRef = ref.child(id);
-                updateUserRef();
+                userRef = usersRef.child(id);
+                updateRefs();
             }
 
             @Override
@@ -90,43 +90,23 @@ public class EditUser extends AppCompatActivity {
             }
         });
 
-        profRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                availableProfessions.clear();
-                for(DataSnapshot s : snapshot.getChildren()){
-                    if(user != null && !user.getProfessions().contains(s.getKey())){
-                        availableProfessions.add(s.getKey());
-                    }
-                }
-                avaAdapter.notifyDataSetChanged();
-
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-
-
-
         add.setOnClickListener(view -> {
             profession = knowledgeSpinner.getSelectedItem().toString();
             if (userProfessions.contains(profession)) return;
             user.addProfession(profession);
             userRef.setValue(user);
-            updateUserRef();
+            updateRefs();
         });
 
         delete.setOnClickListener(view -> {
             profession = professionSpinner.getSelectedItem().toString();
             user.removeProfession(profession);
             userRef.setValue(user);
-            updateUserRef();
+            updateRefs();
         });
     }
-    private void updateUserRef(){
+
+    private void updateRefs(){
         userRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @SuppressLint("NewApi")
             @Override
@@ -151,6 +131,31 @@ public class EditUser extends AppCompatActivity {
 
             }
         });
-    }
 
+        profRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                availableProfessions.clear();
+                for(DataSnapshot s : snapshot.getChildren()){
+                    if(!userProfessions.contains(s.getKey())){
+                        availableProfessions.add(s.getKey());
+                    }
+                }
+                avaAdapter.notifyDataSetChanged();
+
+                if (availableProfessions.isEmpty()){
+                    add.setEnabled(false);
+                    knowledgeSpinner.setEnabled(false);
+                }
+                else {
+                    knowledgeSpinner.setEnabled(true);
+                    add.setEnabled(true);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
 }
