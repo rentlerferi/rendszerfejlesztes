@@ -12,7 +12,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
-public class Admin extends AppCompatActivity {
+public class AddUser extends AppCompatActivity {
 
     EditText Name, ID, Knw1, Knw2, Knw3, Knw4;
     Spinner Role;
@@ -22,7 +22,7 @@ public class Admin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin);
+        setContentView(R.layout.activity_add_user);
         Name = findViewById(R.id.Name);
         ID = findViewById(R.id.ID);
         Knw1 = findViewById(R.id.Knw1);
