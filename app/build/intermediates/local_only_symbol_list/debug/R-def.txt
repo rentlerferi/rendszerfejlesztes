@@ -26,6 +26,7 @@ id Role
 id acceptTask
 id addCategory
 id addProfession
+id addProfessionBtn
 id addTool
 id addUser
 id assignBtn
@@ -37,6 +38,7 @@ id date
 id delProfession
 id deleteCategory
 id denyTask
+id editUser
 id incomingTasks
 id instructions
 id intervalDropdown
@@ -48,8 +50,10 @@ id itemList
 id itemLocation
 id itemName
 id itemStatus
-id knowledge
+id knowledgeSpinner
 id norma
+id professionList
+id professionName
 id professionSpinner
 id repairerSpinner
 id taskDate
@@ -74,8 +78,9 @@ id toolLocation
 id toolName
 id usersSpinner
 layout activity_add_profession
-layout activity_admin
+layout activity_add_user
 layout activity_admin_menu
+layout activity_edit_user
 layout activity_emergency_tasks
 layout activity_main
 layout activity_operator_assign

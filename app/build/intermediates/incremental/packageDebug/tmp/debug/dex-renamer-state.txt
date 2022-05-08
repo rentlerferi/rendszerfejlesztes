@@ -1,4 +1,4 @@
-#Sun May 08 11:04:19 CEST 2022
+#Sun May 08 12:18:14 CEST 2022
 base.2=F\:\\rendszerfejlesztes\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
 path.2=14/classes.dex
 base.1=F\:\\rendszerfejlesztes\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex

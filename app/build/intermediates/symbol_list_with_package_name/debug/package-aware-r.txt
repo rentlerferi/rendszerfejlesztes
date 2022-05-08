@@ -2638,6 +2638,7 @@ id activity_chooser_view_content
 id add
 id addCategory
 id addProfession
+id addProfessionBtn
 id addTool
 id addUser
 id adjust_height
@@ -2758,6 +2759,7 @@ id easeIn
 id easeInOut
 id easeOut
 id east
+id editUser
 id edit_query
 id elastic
 id end
@@ -2825,7 +2827,7 @@ id itemStatus
 id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
-id knowledge
+id knowledgeSpinner
 id labeled
 id layout
 id left
@@ -2932,6 +2934,8 @@ id percent
 id pin
 id position
 id postLayout
+id professionList
+id professionName
 id professionSpinner
 id progress_circular
 id progress_horizontal
@@ -3188,8 +3192,9 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_add_profession
-layout activity_admin
+layout activity_add_user
 layout activity_admin_menu
+layout activity_edit_user
 layout activity_emergency_tasks
 layout activity_main
 layout activity_operator_assign

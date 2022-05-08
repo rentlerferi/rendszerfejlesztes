@@ -4,10 +4,6 @@
         "source": "F:\\rendszerfejlesztes\\app\\src\\main\\res\\layout\\activity_operator_assign.xml"
     },
     {
-        "merged": "F:\\rendszerfejlesztes\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_admin.xml.flat",
-        "source": "F:\\rendszerfejlesztes\\app\\src\\main\\res\\layout\\activity_admin.xml"
-    },
-    {
         "merged": "F:\\rendszerfejlesztes\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
         "source": "F:\\rendszerfejlesztes\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
     },
@@ -68,6 +64,10 @@
         "source": "F:\\rendszerfejlesztes\\app\\src\\main\\res\\layout\\activity_tool_correspondent_menu.xml"
     },
     {
+        "merged": "F:\\rendszerfejlesztes\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_edit_user.xml.flat",
+        "source": "F:\\rendszerfejlesztes\\app\\src\\main\\res\\layout\\activity_edit_user.xml"
+    },
+    {
         "merged": "F:\\rendszerfejlesztes\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
         "source": "F:\\rendszerfejlesztes\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
@@ -94,6 +94,10 @@
     {
         "merged": "F:\\rendszerfejlesztes\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_tool_correspondent_certain.xml.flat",
         "source": "F:\\rendszerfejlesztes\\app\\src\\main\\res\\layout\\activity_tool_correspondent_certain.xml"
+    },
+    {
+        "merged": "F:\\rendszerfejlesztes\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_add_user.xml.flat",
+        "source": "F:\\rendszerfejlesztes\\app\\src\\main\\res\\layout\\activity_add_user.xml"
     },
     {
         "merged": "F:\\rendszerfejlesztes\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_add_profession.xml.flat",

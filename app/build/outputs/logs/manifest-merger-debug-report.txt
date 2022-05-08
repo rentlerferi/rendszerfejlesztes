@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-53:12
-INJECTED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-53:12
-INJECTED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-53:12
-INJECTED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-53:12
+ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-56:12
+INJECTED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-56:12
+INJECTED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-56:12
+INJECTED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-56:12
 MERGED from [com.google.android.material:material:1.5.0] C:\Users\rentl\.gradle\caches\transforms-3\6a5e2ee75c5d8c672e91214ceeeacbe3\transformed\material-1.5.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] C:\Users\rentl\.gradle\caches\transforms-3\7c84409cb1268a388708784b8ebcda8c\transformed\constraintlayout-2.1.3\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.4.1] C:\Users\rentl\.gradle\caches\transforms-3\720c25cf7c7463d63604b0793e90243e\transformed\appcompat-1.4.1\AndroidManifest.xml:17:1-24:12
@@ -60,25 +60,25 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\rentl\.gradle\ca
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\rentl\.gradle\caches\transforms-3\7a33a129588321a0b0975218048bb4da\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\rentl\.gradle\caches\transforms-3\7d4ad5b9f23057939c66cb4dafe7860f\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\rentl\.gradle\caches\transforms-3\1f330d098576dcf6df74e63f82b13f14\transformed\annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
-INJECTED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-53:12
-INJECTED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-53:12
-INJECTED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-53:12
+INJECTED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-56:12
+INJECTED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-56:12
+INJECTED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-56:12
 	package
 		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:3:5-30
 		INJECTED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml
 		INJECTED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml
-		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-53:12
+		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-56:12
 		INJECTED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml
-		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-53:12
+		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:1-56:12
 		INJECTED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:5:5-51:19
+ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:5:5-54:19
 MERGED from [com.google.android.material:material:1.5.0] C:\Users\rentl\.gradle\caches\transforms-3\6a5e2ee75c5d8c672e91214ceeeacbe3\transformed\material-1.5.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.5.0] C:\Users\rentl\.gradle\caches\transforms-3\6a5e2ee75c5d8c672e91214ceeeacbe3\transformed\material-1.5.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] C:\Users\rentl\.gradle\caches\transforms-3\7c84409cb1268a388708784b8ebcda8c\transformed\constraintlayout-2.1.3\AndroidManifest.xml:9:5-20
@@ -125,82 +125,88 @@ MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\rentl\.gradle\cach
 		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:6:9-35
 	android:theme
 		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:11:9-41
-activity#com.example.api.EmergencyTasks
+activity#com.example.api.AddProfession
 ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:12:9-14:40
 	android:exported
 		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:14:13-37
 	android:name
-		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:13:13-43
-activity#com.example.api.OperatorMenu
+		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:13:13-42
+activity#com.example.api.EmergencyTasks
 ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:15:9-17:40
 	android:exported
 		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:17:13-37
 	android:name
-		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:16:13-41
-activity#com.example.api.AdminMenu
+		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:16:13-43
+activity#com.example.api.OperatorMenu
 ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:18:9-20:40
 	android:exported
 		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:20:13-37
 	android:name
-		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:19:13-38
-activity#com.example.api.AddProfession
+		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:19:13-41
+activity#com.example.api.AdminMenu
 ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:21:9-23:40
 	android:exported
 		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:23:13-37
 	android:name
-		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:22:13-42
-activity#com.example.api.Admin
+		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:22:13-38
+activity#com.example.api.EditUser
 ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:24:9-26:40
 	android:exported
 		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:26:13-37
 	android:name
-		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:25:13-34
-activity#com.example.api.ToolCorrespondentCertain
+		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:25:13-37
+activity#com.example.api.AddUser
 ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:27:9-29:40
 	android:exported
 		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:29:13-37
 	android:name
-		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:28:13-53
-activity#com.example.api.Repairer
+		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:28:13-36
+activity#com.example.api.ToolCorrespondentCertain
 ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:30:9-32:40
 	android:exported
 		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:32:13-37
 	android:name
-		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:31:13-37
-activity#com.example.api.OperatorAssign
+		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:31:13-53
+activity#com.example.api.Repairer
 ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:33:9-35:40
 	android:exported
 		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:35:13-37
 	android:name
-		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:34:13-43
-activity#com.example.api.ToolCorrespondentMenu
+		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:34:13-37
+activity#com.example.api.OperatorAssign
 ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:36:9-38:40
 	android:exported
 		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:38:13-37
 	android:name
-		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:37:13-50
-activity#com.example.api.ToolCorrespondentCategory
+		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:37:13-43
+activity#com.example.api.ToolCorrespondentMenu
 ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:39:9-41:40
 	android:exported
 		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:41:13-37
 	android:name
-		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:40:13-54
-activity#com.example.api.LoginActivity
-ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:42:9-50:20
+		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:40:13-50
+activity#com.example.api.ToolCorrespondentCategory
+ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:42:9-44:40
 	android:exported
-		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:44:13-36
+		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:44:13-37
 	android:name
-		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:43:13-42
+		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:43:13-54
+activity#com.example.api.LoginActivity
+ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:45:9-53:20
+	android:exported
+		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:47:13-36
+	android:name
+		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:46:13-42
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:45:13-49:29
+ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:48:13-52:29
 action#android.intent.action.MAIN
-ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:46:17-69
+ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:49:17-69
 	android:name
-		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:46:25-66
+		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:49:25-66
 category#android.intent.category.LAUNCHER
-ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:48:17-77
+ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:51:17-77
 	android:name
-		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:48:27-74
+		ADDED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml:51:27-74
 uses-sdk
 INJECTED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from F:\rendszerfejlesztes\app\src\main\AndroidManifest.xml

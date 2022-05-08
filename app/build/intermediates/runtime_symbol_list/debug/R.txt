@@ -2637,6 +2637,7 @@ int id activity_chooser_view_content 0x7f090053
 int id add 0x7f090054
 int id addCategory 0x7f090055
 int id addProfession 0x7f090056
+int id addProfessionBtn 0x7f090227
 int id addTool 0x7f090057
 int id addUser 0x7f090058
 int id adjust_height 0x7f090059
@@ -2757,6 +2758,7 @@ int id easeIn 0x7f0900cb
 int id easeInOut 0x7f0900cc
 int id easeOut 0x7f0900cd
 int id east 0x7f0900ce
+int id editUser 0x7f090228
 int id edit_query 0x7f0900cf
 int id elastic 0x7f0900d0
 int id end 0x7f0900d1
@@ -2824,7 +2826,7 @@ int id itemStatus 0x7f09010e
 int id item_touch_helper_previous_elevation 0x7f09010f
 int id jumpToEnd 0x7f090110
 int id jumpToStart 0x7f090111
-int id knowledge 0x7f090112
+int id knowledgeSpinner 0x7f09022b
 int id labeled 0x7f090113
 int id layout 0x7f090114
 int id left 0x7f090115
@@ -2931,6 +2933,8 @@ int id percent 0x7f090179
 int id pin 0x7f09017a
 int id position 0x7f09017b
 int id postLayout 0x7f09017c
+int id professionList 0x7f090229
+int id professionName 0x7f09022a
 int id professionSpinner 0x7f09017d
 int id progress_circular 0x7f09017e
 int id progress_horizontal 0x7f09017f
@@ -3187,8 +3191,9 @@ int layout abc_search_view 0x7f0c0019
 int layout abc_select_dialog_material 0x7f0c001a
 int layout abc_tooltip 0x7f0c001b
 int layout activity_add_profession 0x7f0c001c
-int layout activity_admin 0x7f0c001d
+int layout activity_add_user 0x7f0c0080
 int layout activity_admin_menu 0x7f0c001e
+int layout activity_edit_user 0x7f0c0081
 int layout activity_emergency_tasks 0x7f0c001f
 int layout activity_main 0x7f0c0020
 int layout activity_operator_assign 0x7f0c0021

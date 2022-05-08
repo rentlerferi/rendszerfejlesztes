@@ -24,6 +24,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.APi" >
         <activity
+            android:name="com.example.api.AddProfession"
+            android:exported="false" />
+        <activity
             android:name="com.example.api.EmergencyTasks"
             android:exported="false" />
         <activity
@@ -33,10 +36,10 @@
             android:name="com.example.api.AdminMenu"
             android:exported="false" />
         <activity
-            android:name="com.example.api.AddProfession"
+            android:name="com.example.api.EditUser"
             android:exported="false" />
         <activity
-            android:name="com.example.api.Admin"
+            android:name="com.example.api.AddUser"
             android:exported="false" />
         <activity
             android:name="com.example.api.ToolCorrespondentCertain"
