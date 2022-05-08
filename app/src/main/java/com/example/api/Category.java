@@ -5,12 +5,10 @@ public class Category {
     public String name;
     public String interval;
     public String instructions = "";
-    public int norma;
 
-    public Category(String interval, String instructions, int norma) {
+    public Category(String interval, String instructions) {
         this.interval = interval;
         this.instructions = instructions;
-        this.norma = norma;
     }
 
     public Category() { }

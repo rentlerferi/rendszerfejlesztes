@@ -138,8 +138,10 @@ public class Repairer extends AppCompatActivity {
                     "Task Done",
                     (dialog, id) -> {
                         DatabaseReference statusRef = tasksRef.child(t.first).child("status");
+                        DatabaseReference repRef = tasksRef.child(t.first).child("repairerID");
                         DatabaseReference emergencyRef = tasksRef.child(t.first).child("isEmergency");
-                        statusRef.setValue("Done");
+                        statusRef.setValue("Unassigned");
+                        repRef.setValue("");
                         emergencyRef.setValue(false);
                         dialog.cancel();
                     });

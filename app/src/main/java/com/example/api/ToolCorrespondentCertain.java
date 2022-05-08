@@ -114,6 +114,12 @@ public class ToolCorrespondentCertain extends AppCompatActivity {
 
                 toolRef.child(tool_name).setValue(tool);
                 taskRef.setValue(task);
+
+                toolName.setText("");
+                toolLocation.setText("");
+                toolCategory.setSelection(0);
+                toolDescription.setText("");
+                taskInstruction.setText("");
             } else {
                 Toast.makeText(ToolCorrespondentCertain.this, "Fill all the required fields!", Toast.LENGTH_SHORT).show();
             }
